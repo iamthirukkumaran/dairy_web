@@ -2,9 +2,6 @@ import type { Metadata, Viewport } from 'next';
 import { Fraunces, Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { site } from '@/data/site';
-import { StoryAtmosphere } from '@/components/StoryAtmosphere';
-import { Cursor } from '@/components/Cursor';
-import { ScrollProgress } from '@/components/ScrollProgress';
 
 const display = Fraunces({
   subsets: ['latin'],
@@ -21,7 +18,7 @@ const sans = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#FBF6EC',
+  themeColor: '#FBF7F0',
   width: 'device-width',
   initialScale: 1,
 };
@@ -74,12 +71,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${display.variable} ${sans.variable}`}>
-      <body className="font-sans antialiased">
-        <StoryAtmosphere />
-        {children}
-        <ScrollProgress />
-        <Cursor />
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }
