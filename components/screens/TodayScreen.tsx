@@ -1,25 +1,24 @@
+import { todayEntry } from '@/data/memories';
+
 /** A still of the app's diary screen: one written entry, the way Aura keeps it. */
 export function TodayScreen() {
   return (
     <div className="flex h-full flex-col px-5 pb-6 pt-9 text-left">
-      <p className="eyebrow">Wednesday · August 26</p>
+      <p className="eyebrow">
+        {todayEntry.weekday} · {todayEntry.date}
+      </p>
       <h3 className="mt-2 font-serif text-[19px] leading-snug tracking-editorial text-ink">
-        The day things finally started to feel right.
+        {todayEntry.title}
       </h3>
 
       <div className="mt-4 space-y-3 font-sans text-[12px] leading-[1.7] text-ink-soft">
-        <p>
-          I finished the thing I had been avoiding since June. It took two hours. The avoiding took
-          nine weeks.
-        </p>
-        <p>
-          Afterwards I walked home the long way instead of taking the metro. Nothing extraordinary
-          happened, and somehow that was exactly the point.
-        </p>
+        {todayEntry.story.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
       </div>
 
       <div className="mt-5 flex flex-wrap gap-1.5">
-        {['Priya', 'Work', 'Growth'].map((tag) => (
+        {todayEntry.tags.map((tag) => (
           <span
             key={tag}
             className="rounded-pill border border-line bg-paper px-2.5 py-1 font-sans text-[10px] text-ink-soft"

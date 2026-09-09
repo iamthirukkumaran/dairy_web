@@ -14,22 +14,22 @@ export const site = {
   },
 } as const;
 
+/** Hrefs are absolute so the nav works from every page, not just the home page. */
 export const navLinks = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Memories', href: '#memories' },
-  { label: 'Your Book', href: '#book' },
-  { label: 'Privacy', href: '#privacy' },
-  { label: 'Pricing', href: '#pricing' },
+  { label: 'How it works', href: '/#how-it-works' },
+  { label: 'Your Book', href: '/#book' },
+  { label: 'Pricing', href: '/#pricing' },
+  { label: 'Privacy', href: '/privacy' },
 ] as const;
 
 export const footerColumns = [
   {
     title: 'Product',
     links: [
-      { label: 'How it works', href: '#how-it-works' },
-      { label: 'Memories', href: '#memories' },
-      { label: 'Your Book', href: '#book' },
-      { label: 'Pricing', href: '#pricing' },
+      { label: 'How it works', href: '/#how-it-works' },
+      { label: 'Your Book', href: '/#book' },
+      { label: 'Pricing', href: '/#pricing' },
+      { label: 'FAQ', href: '/#faq' },
     ],
   },
   {
@@ -43,9 +43,9 @@ export const footerColumns = [
   {
     title: 'Privacy',
     links: [
+      { label: 'Privacy', href: '/privacy' },
       { label: 'Privacy Policy', href: '#privacy-policy' },
       { label: 'Terms', href: '#terms' },
-      { label: 'Data & AI', href: '#privacy' },
     ],
   },
   {

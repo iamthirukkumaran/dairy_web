@@ -7,7 +7,7 @@ export function Faq() {
   return (
     <Section id="faq" label="Frequently asked questions">
       <Container>
-        <SectionHeading align="center" eyebrow="FAQ" title="Questions people ask." />
+        <SectionHeading align="center" title="Questions." />
 
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-line border-y border-line">
           {faqs.map((item) => (

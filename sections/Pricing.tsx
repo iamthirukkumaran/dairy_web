@@ -9,7 +9,7 @@ export function Pricing() {
   return (
     <Section id="pricing" tone="cream" label="Pricing">
       <Container>
-        <SectionHeading align="center" eyebrow="Pricing" title="Start free. Upgrade when it matters." />
+        <SectionHeading align="center" title="Start free." />
 
         <ul className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
           {plans.map((plan) => (
@@ -61,10 +61,6 @@ export function Pricing() {
             </li>
           ))}
         </ul>
-
-        <p className="mt-8 text-center font-sans text-[13px] text-ink-faint">
-          Printed books are priced separately, per edition.
-        </p>
       </Container>
     </Section>
   );

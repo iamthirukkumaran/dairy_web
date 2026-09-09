@@ -9,9 +9,6 @@ export function FinalCta() {
         <h2 className="mx-auto max-w-2xl display text-[clamp(2rem,4.4vw,3.2rem)] text-ink">
           Start remembering today.
         </h2>
-        <p className="mx-auto mt-4 max-w-lg font-sans text-[16px] leading-[1.65] text-ink-soft">
-          Two minutes of talking is a day you keep forever.
-        </p>
         <StoreBadges align="center" className="mt-8" />
       </Container>
     </Section>

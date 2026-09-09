@@ -1,5 +1,5 @@
 import { Container } from '@/components/ui/Container';
-import { StoreBadges } from '@/components/StoreBadges';
+import { NavLink } from '@/components/ui/NavLink';
 import { footerColumns, site } from '@/data/site';
 
 export function Footer() {
@@ -12,7 +12,6 @@ export function Footer() {
             <p className="mt-3 max-w-xs font-sans text-[15px] leading-relaxed text-ink-soft">
               {site.tagline}
             </p>
-            <StoreBadges className="mt-6" />
           </div>
 
           <nav aria-label="Footer" className="grid grid-cols-2 gap-8 sm:grid-cols-4">
@@ -22,9 +21,12 @@ export function Footer() {
                 <ul className="mt-4 space-y-2.5">
                   {col.links.map((link) => (
                     <li key={link.label}>
-                      <a href={link.href} className="font-sans text-[14px] text-ink-soft hover:text-ink">
+                      <NavLink
+                        href={link.href}
+                        className="font-sans text-[14px] text-ink-soft hover:text-ink"
+                      >
                         {link.label}
-                      </a>
+                      </NavLink>
                     </li>
                   ))}
                 </ul>

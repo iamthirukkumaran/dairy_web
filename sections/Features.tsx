@@ -5,14 +5,9 @@ import { auraOutputs } from '@/data/memories';
 
 export function Features() {
   return (
-    <Section id="memories" tone="paper" label="What Aura remembers">
+    <Section tone="paper" label="What Aura remembers">
       <Container>
-        <SectionHeading
-          align="center"
-          eyebrow="One entry, fully understood"
-          title="You talk. Aura remembers."
-          intro="Every entry quietly becomes six things — the story of the day, the moment that mattered, the people in it, the themes underneath, what you said you'd do next, and something worth sitting with."
-        />
+        <SectionHeading align="center" title="You talk. Aura remembers." />
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {auraOutputs.map((card) => (

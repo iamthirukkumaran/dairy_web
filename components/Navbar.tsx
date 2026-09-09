@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
+import { NavLink } from '@/components/ui/NavLink';
 import { navLinks } from '@/data/site';
 
 export function Navbar() {
@@ -18,19 +19,19 @@ export function Navbar() {
       </a>
 
       <Container className="flex h-[var(--nav-height)] items-center justify-between">
-        <a href="#top" className="font-serif text-[20px] tracking-[0.18em] text-ink" aria-label="Aura — home">
+        <NavLink href="/" className="font-serif text-[20px] tracking-[0.18em] text-ink">
           AURA
-        </a>
+        </NavLink>
 
         <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.href}
               href={link.href}
               className="font-sans text-[14px] text-ink-soft hover:text-ink"
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
@@ -57,14 +58,14 @@ export function Navbar() {
       <div id="mobile-nav" hidden={!open} className="border-t border-line lg:hidden">
         <Container className="flex flex-col py-2">
           {navLinks.map((link) => (
-            <a
+            <NavLink
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="border-b border-line py-3.5 font-sans text-[15px] text-ink-soft last:border-0"
+              className="block border-b border-line py-3.5 font-sans text-[15px] text-ink-soft"
             >
               {link.label}
-            </a>
+            </NavLink>
           ))}
           <Button href="#get" size="md" onClick={() => setOpen(false)} className="my-4 w-full">
             Get the app
