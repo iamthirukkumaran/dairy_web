@@ -3,6 +3,9 @@ import { Fraunces, Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { site } from '@/data/site';
 
+/** Metadata URLs are not rewritten by `basePath`, so prefix them by hand. */
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+
 const display = Fraunces({
   subsets: ['latin'],
   display: 'swap',
@@ -43,9 +46,9 @@ export const metadata: Metadata = {
   // Served as a plain static asset from /public: Next's generated icon route
   // 404s under `next start` in this version, which would ship no favicon.
   icons: {
-    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    shortcut: [{ url: '/icon.svg', type: 'image/svg+xml' }],
-    apple: [{ url: '/icon.svg' }],
+    icon: [{ url: `${base}/icon.svg`, type: 'image/svg+xml' }],
+    shortcut: [{ url: `${base}/icon.svg`, type: 'image/svg+xml' }],
+    apple: [{ url: `${base}/icon.svg` }],
   },
   openGraph: {
     type: 'website',

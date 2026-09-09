@@ -1,5 +1,8 @@
 import { ImageResponse } from 'next/og';
 
+/** Rendered once at build time so `output: 'export'` can emit it as a file. */
+export const dynamic = 'force-static';
+
 export const alt = 'Aura — Your life, beautifully remembered.';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';

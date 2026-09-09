@@ -1,3 +1,6 @@
+/** Emitted as a static file by `output: 'export'`. */
+export const dynamic = 'force-static';
+
 import type { MetadataRoute } from 'next';
 import { site } from '@/data/site';
 
