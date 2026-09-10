@@ -7,7 +7,7 @@ export function Pricing() {
   return (
     <section id="pricing" aria-label="Pricing" className="bg-ivory py-20 sm:py-24">
       <Container>
-        <h2 className="mx-auto max-w-2xl text-center display text-[clamp(1.9rem,4vw,2.8rem)] text-ink">
+        <h2 className="mx-auto max-w-2xl text-center display text-[clamp(1.75rem,3.4vw,2.3rem)] text-ink">
           Start free.
         </h2>
 
@@ -21,26 +21,26 @@ export function Pricing() {
               )}
             >
               <div className="flex items-center justify-between gap-3">
-                <p className="font-sans text-[15px] font-medium text-ink">{plan.name}</p>
+                <p className="text-[15px] font-medium text-ink">{plan.name}</p>
                 {plan.featured ? (
-                  <span className="rounded-pill bg-ink px-2.5 py-1 font-sans text-[10px] uppercase tracking-wide2 text-ivory">
+                  <span className="rounded-pill bg-ink px-2.5 py-1 text-[10px] uppercase tracking-wide2 text-ivory">
                     Popular
                   </span>
                 ) : null}
               </div>
 
-              <p className="mt-5 font-serif text-[34px] tracking-editorial text-ink">
+              <p className="display mt-5 text-[30px] text-ink">
                 {formatPrice(plan.price)}
                 {plan.cadence ? (
-                  <span className="ml-2 font-sans text-[13px] text-ink-faint">{plan.cadence}</span>
+                  <span className="ml-2 text-[13px] text-ink-faint">{plan.cadence}</span>
                 ) : null}
               </p>
 
-              <p className="mt-3 font-sans text-[14px] leading-[1.6] text-ink-soft">{plan.summary}</p>
+              <p className="mt-3 text-[14px] leading-[1.6] text-ink-soft">{plan.summary}</p>
 
               <ul className="mt-6 space-y-2.5">
                 {plan.features.map((feature) => (
-                  <li key={feature} className="flex gap-2.5 font-sans text-[14px] text-ink-soft">
+                  <li key={feature} className="flex gap-2.5 text-[14px] text-ink-soft">
                     <svg viewBox="0 0 20 20" className="mt-[3px] h-3.5 w-3.5 shrink-0 text-clay" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
                       <path d="M4 10.5 8 14.5 16 5.5" />
                     </svg>

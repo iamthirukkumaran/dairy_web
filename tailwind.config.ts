@@ -2,7 +2,8 @@ import type { Config } from 'tailwindcss';
 
 /**
  * Aura design tokens — deliberately small.
- * Warm paper ground, one ink scale, one accent. No decorative animation.
+ * Warm paper ground, one ink scale, one accent, one typeface.
+ * No decorative animation.
  */
 const config: Config = {
   content: ['./app/**/*.{ts,tsx}', './components/**/*.{ts,tsx}', './sections/**/*.{ts,tsx}'],
@@ -20,9 +21,7 @@ const config: Config = {
         sage: '#6F8C69',
       },
       fontFamily: {
-        serif: ['var(--font-display)', 'Iowan Old Style', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        hand: ['var(--font-hand)', 'Bradley Hand', 'Segoe Script', 'cursive'],
       },
       maxWidth: {
         content: '1120px',
@@ -40,6 +39,8 @@ const config: Config = {
         phone: '0 24px 60px -30px rgba(34,31,28,0.35)',
       },
       letterSpacing: {
+        /** Large text needs to be pulled tighter than small text. */
+        display: '-0.035em',
         editorial: '-0.02em',
         wide2: '0.12em',
       },

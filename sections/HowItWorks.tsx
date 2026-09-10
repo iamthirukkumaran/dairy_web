@@ -13,11 +13,9 @@ export function HowItWorks() {
         <ol className="grid gap-px overflow-hidden rounded-panel border border-line bg-line md:grid-cols-3">
           {steps.map((s) => (
             <li key={s.n} className="bg-paper px-7 py-9">
-              <p className="font-sans text-[12px] font-semibold tabular-nums tracking-wide2 text-clay">
-                {s.n}
-              </p>
-              <h3 className="mt-3 font-serif text-[22px] tracking-editorial text-ink">{s.title}</h3>
-              <p className="mt-2 font-sans text-[15px] leading-[1.6] text-ink-soft">{s.body}</p>
+              <p className="text-[12px] font-semibold tabular-nums tracking-wide2 text-clay">{s.n}</p>
+              <h3 className="heading mt-3 text-[19px] text-ink">{s.title}</h3>
+              <p className="mt-2 text-[15px] leading-[1.6] text-ink-soft">{s.body}</p>
             </li>
           ))}
         </ol>

@@ -13,12 +13,10 @@ export function Connections() {
     <section aria-label="Aura Connections" className="bg-ivory pb-20 sm:pb-24">
       <Container>
         <div className="wash rounded-panel border border-line px-6 py-12 sm:px-10 sm:py-14">
-          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)]">
+          <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,0.62fr)_minmax(0,1.38fr)]">
             <div>
-              <h2 className="display text-[clamp(1.7rem,3.4vw,2.4rem)] text-ink">
-                Aura Connections
-              </h2>
-              <p className="mt-4 max-w-xs font-sans text-[15px] leading-[1.7] text-ink-soft">
+              <h2 className="display text-[clamp(1.6rem,3vw,2.1rem)] text-ink">Aura Connections</h2>
+              <p className="mt-4 max-w-xs text-[15px] leading-[1.7] text-ink-soft">
                 Your people. Your places. Your stories. All connected.
               </p>
               <a
@@ -50,10 +48,10 @@ export function Connections() {
                 />
               </svg>
 
-              <ul className="relative grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-5">
+              <ul className="relative grid grid-cols-2 gap-8 sm:grid-cols-4 sm:gap-4">
                 {nodes.map((node) => (
-                  <li key={node.title} className="text-center">
-                    <span className="mx-auto block h-[92px] w-[92px] overflow-hidden rounded-full border-[3px] border-paper shadow-card">
+                  <li key={node.title} className="min-w-0 text-center">
+                    <span className="mx-auto block h-[84px] w-[84px] overflow-hidden rounded-full border-[3px] border-paper shadow-card">
                       {node.image ? (
                         <img
                           src={asset(node.image)}
@@ -71,8 +69,8 @@ export function Connections() {
                         </span>
                       )}
                     </span>
-                    <p className="mt-3 font-sans text-[14px] font-medium text-ink">{node.title}</p>
-                    <p className="mt-1 font-sans text-[12px] leading-[1.5] text-ink-faint">
+                    <p className="mt-3 text-[14px] font-medium text-ink">{node.title}</p>
+                    <p className="mt-1 text-[12px] leading-[1.5] text-ink-faint">
                       {node.body}
                     </p>
                   </li>

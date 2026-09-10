@@ -15,7 +15,7 @@ export function FinalCta() {
       <div className="absolute inset-0 -z-10 bg-ivory/55" />
 
       <Container className="py-20 text-center sm:py-24">
-        <h2 className="mx-auto max-w-2xl display text-[clamp(1.9rem,4.4vw,3rem)] text-ink">
+        <h2 className="mx-auto max-w-2xl display text-[clamp(1.75rem,3.6vw,2.5rem)] text-ink">
           Start remembering your life.
         </h2>
         <StoreBadges align="center" className="mt-8" />

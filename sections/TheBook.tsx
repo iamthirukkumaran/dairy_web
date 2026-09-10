@@ -8,12 +8,10 @@ export function TheBook() {
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
-            <h2 className="display display-broken text-[clamp(1.9rem,4vw,2.8rem)] text-ink">
-              Turn your year
-              <br />
-              <span className="display-accent">into a book.</span>
+            <h2 className="display text-[clamp(1.75rem,3.4vw,2.3rem)] text-ink">
+              Turn your year into a book.
             </h2>
-            <p className="mt-5 max-w-sm font-sans text-[16px] leading-[1.7] text-ink-soft">
+            <p className="mt-5 max-w-sm text-[16px] leading-[1.7] text-ink-soft">
               Printed from your own entries, previewed page by page before anything is bound.
             </p>
 
@@ -21,14 +19,13 @@ export function TheBook() {
               {bookEditions.map((edition) => (
                 <li
                   key={edition.id}
-                  className="rounded-pill border border-line bg-paper px-3.5 py-1.5 font-sans text-[13px] text-ink-soft"
+                  className="rounded-pill border border-line bg-paper px-3.5 py-1.5 text-[13px] text-ink-soft"
                 >
                   {edition.name}
                 </li>
               ))}
             </ul>
 
-            <p className="hand mt-8 text-[20px]">One year. One book. Yours.</p>
           </div>
 
           <div className="flex justify-center">

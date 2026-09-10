@@ -27,7 +27,7 @@ export function StoreBadges({
 }
 
 const box =
-  'inline-flex h-[52px] items-center gap-3 rounded-[10px] border border-white/15 bg-ink px-4 text-ivory hover:bg-[#39332d]';
+  'inline-flex h-[52px] min-w-[196px] items-center gap-3 rounded-[10px] border border-white/15 bg-ink px-4 text-ivory hover:bg-[#39332d]';
 
 function AppStoreBadge() {
   return (
@@ -36,10 +36,10 @@ function AppStoreBadge() {
         <path d="M318.7 268c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-36.8-2.8-77 21.5-91.7 21.5-15.6 0-51.4-20.5-79.4-20.5C56.7 141.3 0 184.7 0 273.1c0 26.1 4.8 53.1 14.3 80.9 12.7 36.7 60.3 126.2 108.7 124.7 22.4-.5 38.2-15.9 67.4-15.9 28.3 0 42.9 15.9 67.9 15.9 48.9-.7 92-82.1 104-118.9-65.4-30.8-43.6-90.4-43.6-91.8zm-46.1-159c22.2-26.4 20.2-50.4 19.6-59-19.7 1.1-42.5 13.4-55.5 28.5-14.3 16.2-22.7 36.2-20.9 58.6 21.3 1.6 40.8-9.4 56.8-28.1z" />
       </svg>
       <span className="text-left leading-none">
-        <span className="block font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/70">
+        <span className="block text-[9px] uppercase tracking-[0.14em] text-ivory/70">
           Download on the
         </span>
-        <span className="mt-[5px] block font-sans text-[17px] font-medium">App Store</span>
+        <span className="mt-[5px] block text-[17px] font-medium">App Store</span>
       </span>
     </a>
   );
@@ -55,10 +55,10 @@ function PlayStoreBadge() {
         <path d="M16.06 8.65 4.69 2.17c-.53-.3-1.21-.24-1.63.19L12.19 12l3.87-3.35z" fill="#00D24D" />
       </svg>
       <span className="text-left leading-none">
-        <span className="block font-sans text-[9px] uppercase tracking-[0.14em] text-ivory/70">
+        <span className="block text-[9px] uppercase tracking-[0.14em] text-ivory/70">
           Get it on
         </span>
-        <span className="mt-[5px] block font-sans text-[17px] font-medium">Google Play</span>
+        <span className="mt-[5px] block text-[17px] font-medium">Google Play</span>
       </span>
     </a>
   );

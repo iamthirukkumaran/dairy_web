@@ -29,7 +29,7 @@ export function Navbar() {
             <NavLink
               key={link.href}
               href={link.href}
-              className="font-sans text-[14px] text-ink-soft hover:text-ink"
+              className="text-[14px] text-ink-soft hover:text-ink"
             >
               {link.label}
             </NavLink>
@@ -63,7 +63,7 @@ export function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-line py-3.5 font-sans text-[15px] text-ink-soft"
+              className="block border-b border-line py-3.5 text-[15px] text-ink-soft"
             >
               {link.label}
             </NavLink>

@@ -1,31 +1,21 @@
 import type { Metadata, Viewport } from 'next';
-import { Caveat, Fraunces, Inter } from 'next/font/google';
+import { Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { site } from '@/data/site';
 
 /** Metadata URLs are not rewritten by `basePath`, so prefix them by hand. */
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-const display = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-display',
-  weight: ['400', '500'],
-  style: ['normal', 'italic'],
-});
-
+/**
+ * One family for the whole site. The optical-size axis gives large text the
+ * tighter apertures and spacing of a display cut, which is the job the old
+ * serif was doing badly.
+ */
 const sans = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
-});
-
-/** Used only for the short margin notes written alongside the page. */
-const hand = Caveat({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-hand',
-  weight: ['500', '600'],
+  axes: ['opsz'],
 });
 
 export const viewport: Viewport = {
@@ -81,7 +71,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable} ${hand.variable}`}>
+    <html lang="en" className={sans.variable}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

@@ -4,7 +4,7 @@ export function PrivacyNote() {
   return (
     <section aria-label="Privacy" className="bg-ivory py-16 sm:py-20">
       <Container>
-        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:gap-12 md:text-left">
+        <div className="flex flex-col items-center gap-8 text-center md:flex-row md:justify-center md:gap-10 md:text-left">
           <span className="wash relative flex h-24 w-24 shrink-0 items-center justify-center rounded-full border border-line">
             <span className="flex h-14 w-14 items-center justify-center rounded-full bg-clay text-ivory shadow-card">
               <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
@@ -13,22 +13,15 @@ export function PrivacyNote() {
             </span>
           </span>
 
-          <div className="md:flex-1">
-            <h2 className="display text-[clamp(1.5rem,3vw,2.1rem)] text-ink">
+          <div className="max-w-xl">
+            <h2 className="display text-[clamp(1.45rem,2.6vw,1.9rem)] text-ink">
               Your memories belong to you.
             </h2>
-            <p className="mx-auto mt-3 max-w-md font-sans text-[15px] leading-[1.7] text-ink-soft md:mx-0">
+            <p className="mx-auto mt-3 max-w-md text-[15px] leading-[1.7] text-ink-soft md:mx-0">
               Your entries are private and encrypted. Nothing is sold, nothing is published, and you
               can take everything with you.
             </p>
           </div>
-
-          <p className="hand shrink-0 text-[21px] leading-tight md:text-right">
-            Private.
-            <br />
-            Always.
-            <span className="ml-1 text-clay">&#9825;</span>
-          </p>
         </div>
       </Container>
     </section>

@@ -48,10 +48,22 @@
 }
 
 @layer components {
+  /*
+   * Headlines are the same typeface as everything else. What separates them is
+   * weight, tracking and leading — not a second family, not an italic, and not
+   * a second colour.
+   */
   .display {
-    @apply font-serif tracking-editorial;
-    font-weight: 400;
-    line-height: 1.06;
+    @apply tracking-display;
+    font-weight: 500;
+    line-height: 1.08;
+  }
+
+  /* Section-level headings: the same idea, one step down. */
+  .heading {
+    @apply tracking-editorial;
+    font-weight: 550;
+    line-height: 1.2;
   }
 
   /* Opt out of `text-wrap: balance` where the line breaks are written by hand. */
@@ -59,22 +71,9 @@
     text-wrap: initial;
   }
 
-  /* The second line of a headline — the part that carries the feeling. */
-  .display-accent {
-    @apply font-serif italic tracking-editorial text-clay;
-    font-weight: 400;
-  }
-
   .eyebrow {
-    @apply font-sans text-[11px] uppercase tracking-wide2 text-ink-faint;
+    @apply text-[11px] uppercase tracking-wide2 text-ink-faint;
     font-weight: 600;
-  }
-
-  /* Margin notes, set as if written in by hand. */
-  .hand {
-    @apply font-hand text-ink-soft;
-    font-weight: 500;
-    line-height: 1.25;
   }
 
   .card {

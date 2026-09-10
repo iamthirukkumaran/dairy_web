@@ -26,7 +26,7 @@ export function Button({ variant = 'primary', size = 'md', className, children, 
   return (
     <a
       className={cn(
-        'inline-flex select-none items-center justify-center rounded-pill font-sans font-medium',
+        'inline-flex select-none items-center justify-center rounded-pill font-medium',
         variants[variant],
         sizes[size],
         className,
