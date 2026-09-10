@@ -22,6 +22,7 @@ const config: Config = {
       fontFamily: {
         serif: ['var(--font-display)', 'Iowan Old Style', 'Georgia', 'serif'],
         sans: ['var(--font-sans)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        hand: ['var(--font-hand)', 'Bradley Hand', 'Segoe Script', 'cursive'],
       },
       maxWidth: {
         content: '1120px',
@@ -29,10 +30,13 @@ const config: Config = {
       },
       borderRadius: {
         card: '18px',
+        panel: '28px',
         pill: '999px',
       },
       boxShadow: {
         soft: '0 1px 2px rgba(34,31,28,0.04)',
+        card: '0 18px 40px -28px rgba(34,31,28,0.30)',
+        lift: '0 30px 70px -40px rgba(34,31,28,0.40)',
         phone: '0 24px 60px -30px rgba(34,31,28,0.35)',
       },
       letterSpacing: {

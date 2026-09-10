@@ -24,3 +24,11 @@ export function seeded(seed: number): number {
 export function clamp(value: number, min: number, max: number): number {
   return Math.min(max, Math.max(min, value));
 }
+
+/**
+ * Static assets under /public are not rewritten by `basePath`, so plain
+ * `<img src>` values have to be prefixed by hand the way metadata URLs are.
+ */
+export function asset(path: string): string {
+  return `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}${path}`;
+}

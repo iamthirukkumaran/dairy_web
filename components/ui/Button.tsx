@@ -1,12 +1,13 @@
 import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
-type Variant = 'primary' | 'secondary';
+type Variant = 'primary' | 'secondary' | 'accent';
 type Size = 'sm' | 'md' | 'lg';
 
 const variants: Record<Variant, string> = {
   primary: 'bg-ink text-ivory hover:bg-[#39332d]',
   secondary: 'border border-line bg-paper text-ink hover:bg-cream',
+  accent: 'bg-clay text-ivory hover:bg-[#9E5636]',
 };
 
 const sizes: Record<Size, string> = {

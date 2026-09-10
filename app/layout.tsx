@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import { Fraunces, Inter } from 'next/font/google';
+import { Caveat, Fraunces, Inter } from 'next/font/google';
 import '@/styles/globals.css';
 import { site } from '@/data/site';
 
@@ -18,6 +18,14 @@ const sans = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
+});
+
+/** Used only for the short margin notes written alongside the page. */
+const hand = Caveat({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-hand',
+  weight: ['500', '600'],
 });
 
 export const viewport: Viewport = {
@@ -73,7 +81,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${display.variable} ${sans.variable}`}>
+    <html lang="en" className={`${display.variable} ${sans.variable} ${hand.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

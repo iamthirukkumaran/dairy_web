@@ -1,6 +1,4 @@
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 
 const steps = [
   { n: '01', title: 'Talk', body: 'Tell Aura about your day, out loud.' },
@@ -10,13 +8,11 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <Section id="how-it-works" label="How it works">
+    <section id="how-it-works" aria-label="How it works" className="bg-ivory pb-20 sm:pb-24">
       <Container>
-        <SectionHeading align="center" title="Three things. That's the whole app." />
-
-        <ol className="mt-12 grid gap-4 md:grid-cols-3">
+        <ol className="grid gap-px overflow-hidden rounded-panel border border-line bg-line md:grid-cols-3">
           {steps.map((s) => (
-            <li key={s.n} className="rounded-card border border-line bg-paper p-6">
+            <li key={s.n} className="bg-paper px-7 py-9">
               <p className="font-sans text-[12px] font-semibold tabular-nums tracking-wide2 text-clay">
                 {s.n}
               </p>
@@ -26,6 +22,6 @@ export function HowItWorks() {
           ))}
         </ol>
       </Container>
-    </Section>
+    </section>
   );
 }

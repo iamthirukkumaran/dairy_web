@@ -4,13 +4,14 @@ import { useState } from 'react';
 import { Container } from '@/components/ui/Container';
 import { Button } from '@/components/ui/Button';
 import { NavLink } from '@/components/ui/NavLink';
+import { Wordmark } from '@/components/Mark';
 import { navLinks } from '@/data/site';
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-ivory">
+    <header className="sticky top-0 z-50 bg-ivory/85 backdrop-blur-md">
       <a
         href="#main"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-pill focus:bg-ink focus:px-4 focus:py-2 focus:text-sm focus:text-ivory"
@@ -19,11 +20,11 @@ export function Navbar() {
       </a>
 
       <Container className="flex h-[var(--nav-height)] items-center justify-between">
-        <NavLink href="/" className="font-serif text-[20px] tracking-[0.18em] text-ink">
-          AURA
+        <NavLink href="/" aria-label="Aura — home">
+          <Wordmark />
         </NavLink>
 
-        <nav aria-label="Primary" className="hidden items-center gap-8 lg:flex">
+        <nav aria-label="Primary" className="hidden items-center gap-9 lg:flex">
           {navLinks.map((link) => (
             <NavLink
               key={link.href}
@@ -36,8 +37,8 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Button href="#get" size="sm" className="hidden sm:inline-flex">
-            Get the app
+          <Button href="#get" variant="accent" size="sm" className="hidden sm:inline-flex">
+            Download
           </Button>
 
           <button
@@ -55,7 +56,7 @@ export function Navbar() {
         </div>
       </Container>
 
-      <div id="mobile-nav" hidden={!open} className="border-t border-line lg:hidden">
+      <div id="mobile-nav" hidden={!open} className="border-t border-line bg-ivory lg:hidden">
         <Container className="flex flex-col py-2">
           {navLinks.map((link) => (
             <NavLink
@@ -67,8 +68,8 @@ export function Navbar() {
               {link.label}
             </NavLink>
           ))}
-          <Button href="#get" size="md" onClick={() => setOpen(false)} className="my-4 w-full">
-            Get the app
+          <Button href="#get" variant="accent" size="md" onClick={() => setOpen(false)} className="my-4 w-full">
+            Download
           </Button>
         </Container>
       </div>

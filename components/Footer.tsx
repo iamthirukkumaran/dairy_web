@@ -1,5 +1,6 @@
 import { Container } from '@/components/ui/Container';
 import { NavLink } from '@/components/ui/NavLink';
+import { Wordmark } from '@/components/Mark';
 import { footerColumns, site } from '@/data/site';
 
 export function Footer() {
@@ -8,7 +9,7 @@ export function Footer() {
       <Container className="py-14">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-16">
           <div>
-            <p className="font-serif text-[20px] tracking-[0.18em] text-ink">AURA</p>
+            <Wordmark />
             <p className="mt-3 max-w-xs font-sans text-[15px] leading-relaxed text-ink-soft">
               {site.tagline}
             </p>

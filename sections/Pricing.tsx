@@ -1,22 +1,22 @@
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { Button } from '@/components/ui/Button';
 import { formatPrice, plans } from '@/data/pricing';
 import { cn } from '@/lib/utils';
 
 export function Pricing() {
   return (
-    <Section id="pricing" tone="cream" label="Pricing">
+    <section id="pricing" aria-label="Pricing" className="bg-ivory py-20 sm:py-24">
       <Container>
-        <SectionHeading align="center" title="Start free." />
+        <h2 className="mx-auto max-w-2xl text-center display text-[clamp(1.9rem,4vw,2.8rem)] text-ink">
+          Start free.
+        </h2>
 
         <ul className="mx-auto mt-12 grid max-w-3xl gap-4 sm:grid-cols-2">
           {plans.map((plan) => (
             <li
               key={plan.id}
               className={cn(
-                'flex flex-col rounded-card border bg-paper p-7',
+                'flex flex-col rounded-card border bg-paper p-7 shadow-soft',
                 plan.featured ? 'border-ink' : 'border-line',
               )}
             >
@@ -62,6 +62,6 @@ export function Pricing() {
           ))}
         </ul>
       </Container>
-    </Section>
+    </section>
   );
 }

@@ -1,13 +1,13 @@
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { faqs } from '@/data/faq';
 
 export function Faq() {
   return (
-    <Section id="faq" label="Frequently asked questions">
+    <section id="faq" aria-label="Frequently asked questions" className="bg-paper py-20 sm:py-24">
       <Container>
-        <SectionHeading align="center" title="Questions." />
+        <h2 className="mx-auto max-w-2xl text-center display text-[clamp(1.9rem,4vw,2.8rem)] text-ink">
+          Questions.
+        </h2>
 
         <div className="mx-auto mt-12 max-w-3xl divide-y divide-line border-y border-line">
           {faqs.map((item) => (
@@ -28,6 +28,6 @@ export function Faq() {
           ))}
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

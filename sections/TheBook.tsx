@@ -1,18 +1,21 @@
 import { Container } from '@/components/ui/Container';
-import { Section } from '@/components/ui/Section';
-import { SectionHeading } from '@/components/ui/SectionHeading';
 import { bookEditions } from '@/data/pricing';
+import { asset } from '@/lib/utils';
 
 export function TheBook() {
   return (
-    <Section id="book" tone="cream" label="Your year as a book">
+    <section id="book" aria-label="Your year as a book" className="bg-cream py-20 sm:py-24">
       <Container>
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeading
-              title="Turn your year into a book."
-              intro="Printed from your own entries, previewed before anything is bound."
-            />
+            <h2 className="display display-broken text-[clamp(1.9rem,4vw,2.8rem)] text-ink">
+              Turn your year
+              <br />
+              <span className="display-accent">into a book.</span>
+            </h2>
+            <p className="mt-5 max-w-sm font-sans text-[16px] leading-[1.7] text-ink-soft">
+              Printed from your own entries, previewed page by page before anything is bound.
+            </p>
 
             <ul className="mt-8 flex flex-wrap gap-2">
               {bookEditions.map((edition) => (
@@ -24,17 +27,21 @@ export function TheBook() {
                 </li>
               ))}
             </ul>
+
+            <p className="hand mt-8 text-[20px]">One year. One book. Yours.</p>
           </div>
 
-          {/* A plain book cover, printed flat */}
           <div className="flex justify-center">
-            <div className="flex h-[340px] w-[250px] flex-col items-center justify-center rounded-[4px] rounded-l-[10px] bg-[#40563D] shadow-phone">
-              <p className="font-serif text-[13px] tracking-[0.24em] text-[#E5CF9F]">MY 2026</p>
-              <span className="mt-3 h-px w-10 bg-[#E5CF9F]/50" />
-            </div>
+            <img
+              src={asset('/images/book.jpg')}
+              alt="Hands turning the pages of a printed photo book"
+              className="w-full max-w-[440px] rounded-panel object-cover shadow-lift"
+              width={1100}
+              height={1100}
+            />
           </div>
         </div>
       </Container>
-    </Section>
+    </section>
   );
 }

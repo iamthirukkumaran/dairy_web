@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { ComponentPropsWithoutRef, ReactNode } from 'react';
 import Link from 'next/link';
 
 /**
@@ -7,24 +7,18 @@ import Link from 'next/link';
  */
 export function NavLink({
   href,
-  className,
   children,
-  onClick,
-}: {
-  href: string;
-  className?: string;
-  children: ReactNode;
-  onClick?: () => void;
-}) {
+  ...props
+}: ComponentPropsWithoutRef<'a'> & { href: string; children: ReactNode }) {
   if (href.startsWith('/')) {
     return (
-      <Link href={href} className={className} onClick={onClick}>
+      <Link href={href} {...props}>
         {children}
       </Link>
     );
   }
   return (
-    <a href={href} className={className} onClick={onClick}>
+    <a href={href} {...props}>
       {children}
     </a>
   );
