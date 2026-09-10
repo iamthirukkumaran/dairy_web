@@ -30,6 +30,7 @@ export const footerColumns = [
       { label: 'Your Book', href: '/#book' },
       { label: 'Pricing', href: '/#pricing' },
       { label: 'FAQ', href: '/#faq' },
+      { label: 'Privacy', href: '/privacy' },
     ],
   },
   {
@@ -41,11 +42,13 @@ export const footerColumns = [
     ],
   },
   {
-    title: 'Privacy',
+    title: 'Legal',
     links: [
-      { label: 'Privacy', href: '/privacy' },
-      { label: 'Privacy Policy', href: '#privacy-policy' },
-      { label: 'Terms', href: '#terms' },
+      { label: 'Privacy Policy', href: '/legal/privacy-policy' },
+      { label: 'Terms', href: '/legal/terms' },
+      { label: 'Refunds', href: '/legal/refunds' },
+      { label: 'Shipping', href: '/legal/shipping' },
+      { label: 'Cookies', href: '/legal/cookies' },
     ],
   },
   {
