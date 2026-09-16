@@ -11,14 +11,22 @@ export function FinalCta() {
         className="absolute inset-0 -z-10 h-full w-full object-cover"
         width={2000}
         height={700}
+        loading="lazy"
+        decoding="async"
       />
-      <div className="absolute inset-0 -z-10 bg-ivory/55" />
+      {/*
+       * Heaviest under the headline, lighter at the edges: the photograph still
+       * reads, and the type keeps its contrast wherever the crop lands.
+       */}
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ivory/45 via-ivory/65 to-ivory/50" />
 
-      <Container className="py-20 text-center sm:py-24">
-        <h2 className="mx-auto max-w-2xl display text-[clamp(1.75rem,3.6vw,2.5rem)] text-ink">
+      <Container className="section text-center">
+        <h2 className="display mx-auto max-w-2xl text-[clamp(1.7rem,6.5vw,2.5rem)] text-ink sm:text-[clamp(1.75rem,3.6vw,2.5rem)]">
           Start remembering your life.
         </h2>
-        <StoreBadges align="center" className="mt-8" />
+        <div className="mx-auto mt-8 max-w-md">
+          <StoreBadges align="center" />
+        </div>
       </Container>
     </section>
   );

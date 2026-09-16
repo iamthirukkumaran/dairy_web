@@ -19,7 +19,7 @@ export default function LegalIndexPage() {
     <>
       <Navbar />
       <main id="main">
-        <Container className="py-16 sm:py-24">
+        <Container className="section">
           <div className="mx-auto max-w-[760px]">
             <p className="eyebrow">Legal</p>
             <h1 className="mt-3 display text-[clamp(1.9rem,4vw,2.6rem)] text-ink">
@@ -35,10 +35,10 @@ export default function LegalIndexPage() {
                 <li key={doc.slug}>
                   <NavLink
                     href={`/legal/${doc.slug}`}
-                    className="group flex items-start justify-between gap-6 py-6"
+                    className="transition-ui group flex items-start justify-between gap-6 py-6 hover:text-ink"
                   >
                     <span>
-                      <span className="flex items-center gap-3">
+                      <span className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
                         <span className="heading text-[17px] text-ink">{doc.title}</span>
                         {isDraft(doc) ? (
                           <span className="rounded-pill border border-clay/30 bg-clay/[0.08] px-2 py-0.5 text-[10px] uppercase tracking-wide2 text-clay">

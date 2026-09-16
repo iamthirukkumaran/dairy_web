@@ -12,6 +12,15 @@ export function formatPrice(price: Price, fallback = '___'): string {
   return `${price.currency}${price.amount.toLocaleString('en-IN')}${price.suffix ?? ''}`;
 }
 
+/**
+ * Whether a real number has been supplied. A card with no price renders a
+ * plain "Pricing soon" line rather than a row of underscores, which reads as a
+ * broken layout rather than as a value nobody has filled in yet.
+ */
+export function hasPrice(price: Price): boolean {
+  return price.amount !== null;
+}
+
 export type Plan = {
   id: string;
   name: string;

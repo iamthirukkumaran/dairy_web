@@ -6,12 +6,13 @@ type Size = 'sm' | 'md' | 'lg';
 
 const variants: Record<Variant, string> = {
   primary: 'bg-ink text-ivory hover:bg-[#39332d]',
-  secondary: 'border border-line bg-paper text-ink hover:bg-cream',
-  accent: 'bg-clay text-ivory hover:bg-[#9E5636]',
+  secondary: 'border border-line bg-paper text-ink hover:border-ink/25 hover:bg-cream',
+  accent: 'bg-clay text-ivory hover:bg-[#8A4729]',
 };
 
+/** `sm` is the header CTA: small enough for a 64px bar, still a 40px target. */
 const sizes: Record<Size, string> = {
-  sm: 'h-9 px-4 text-[13px]',
+  sm: 'h-10 px-4 text-[13px]',
   md: 'h-11 px-5 text-[14px]',
   lg: 'h-12 px-6 text-[15px]',
 };
@@ -26,7 +27,7 @@ export function Button({ variant = 'primary', size = 'md', className, children, 
   return (
     <a
       className={cn(
-        'inline-flex select-none items-center justify-center rounded-pill font-medium',
+        'transition-ui inline-flex select-none items-center justify-center whitespace-nowrap rounded-pill font-medium',
         variants[variant],
         sizes[size],
         className,

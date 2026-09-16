@@ -3,7 +3,9 @@ import { cn } from '@/lib/utils';
 
 /**
  * The two store buttons, drawn as the familiar black boxes.
- * Static markup — no hover motion, no animation.
+ * Full width and stacked on phones, then a fixed pair from `sm` up — fixed
+ * rather than flexible because the labels must never wrap, and because this
+ * also renders in columns that set no width of their own.
  */
 export function StoreBadges({
   className,
@@ -27,12 +29,12 @@ export function StoreBadges({
 }
 
 const box =
-  'inline-flex h-[52px] min-w-[196px] items-center gap-3 rounded-[10px] border border-white/15 bg-ink px-4 text-ivory hover:bg-[#39332d]';
+  'transition-ui inline-flex h-[54px] w-full items-center justify-center gap-3 rounded-[12px] border border-white/15 bg-ink px-4 text-ivory hover:bg-[#39332d] sm:h-[52px] sm:w-[178px] sm:justify-start sm:gap-2.5 sm:px-3.5';
 
 function AppStoreBadge() {
   return (
     <a href={site.links.ios} className={box} aria-label="Download Aura on the App Store">
-      <svg viewBox="0 0 384 512" className="h-7 w-7 shrink-0" fill="currentColor" aria-hidden="true">
+      <svg viewBox="0 0 384 512" className="h-6 w-6 shrink-0" fill="currentColor" aria-hidden="true">
         <path d="M318.7 268c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-36.8-2.8-77 21.5-91.7 21.5-15.6 0-51.4-20.5-79.4-20.5C56.7 141.3 0 184.7 0 273.1c0 26.1 4.8 53.1 14.3 80.9 12.7 36.7 60.3 126.2 108.7 124.7 22.4-.5 38.2-15.9 67.4-15.9 28.3 0 42.9 15.9 67.9 15.9 48.9-.7 92-82.1 104-118.9-65.4-30.8-43.6-90.4-43.6-91.8zm-46.1-159c22.2-26.4 20.2-50.4 19.6-59-19.7 1.1-42.5 13.4-55.5 28.5-14.3 16.2-22.7 36.2-20.9 58.6 21.3 1.6 40.8-9.4 56.8-28.1z" />
       </svg>
       <span className="text-left leading-none">

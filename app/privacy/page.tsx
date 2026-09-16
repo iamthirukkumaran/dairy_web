@@ -18,7 +18,7 @@ export default function PrivacyPage() {
     <>
       <Navbar />
       <main id="main">
-        <Container className="py-16 sm:py-24">
+        <Container className="section">
           <div className="mx-auto max-w-2xl text-center">
             <p className="eyebrow">Privacy</p>
             <h1 className="mt-3 display text-[clamp(1.9rem,4vw,2.6rem)] text-ink">
@@ -50,13 +50,13 @@ export default function PrivacyPage() {
               over it, read the policy itself.
             </p>
             <div className="mt-5 flex flex-wrap justify-center gap-x-6 gap-y-2">
-              <NavLink href="/legal/privacy-policy" className="text-[14px] text-clay hover:text-ink">
+              <NavLink href="/legal/privacy-policy" className="transition-ui inline-block py-1 text-[14px] text-clay hover:text-ink">
                 Privacy Policy
               </NavLink>
-              <NavLink href="/legal/cookies" className="text-[14px] text-clay hover:text-ink">
+              <NavLink href="/legal/cookies" className="transition-ui inline-block py-1 text-[14px] text-clay hover:text-ink">
                 Cookie Policy
               </NavLink>
-              <NavLink href="/legal" className="text-[14px] text-clay hover:text-ink">
+              <NavLink href="/legal" className="transition-ui inline-block py-1 text-[14px] text-clay hover:text-ink">
                 All policies
               </NavLink>
             </div>

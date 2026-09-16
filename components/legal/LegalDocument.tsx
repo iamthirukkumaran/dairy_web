@@ -8,11 +8,11 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
   const draft = isDraft(doc);
 
   return (
-    <Container className="py-14 sm:py-20">
+    <Container className="section">
       <div className="mx-auto max-w-[760px]">
         <NavLink
           href="/legal"
-          className="text-[13px] text-ink-soft hover:text-ink"
+          className="transition-ui inline-flex items-center py-1 text-[13px] text-ink-soft hover:text-ink"
         >
           ← All policies
         </NavLink>
@@ -46,7 +46,7 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
               <li key={section.id}>
                 <a
                   href={`#${section.id}`}
-                  className="text-[14px] text-ink-soft hover:text-ink"
+                  className="transition-ui inline-block py-1 text-[14px] text-ink-soft hover:text-ink"
                 >
                   {section.heading}
                 </a>
@@ -111,7 +111,7 @@ function PolicyBlock({ block }: { block: Block }) {
 
     case 'ol':
       return (
-        <ol className="list-decimal space-y-2.5 pl-5 marker:marker:text-[13px] marker:text-ink-faint">
+        <ol className="list-decimal space-y-2.5 pl-5 marker:text-[13px] marker:text-ink-faint">
           {block.items.map((item) => (
             <li key={item} className="text-[15px] leading-[1.75] text-ink-soft">
               <LegalText text={item} />
@@ -143,7 +143,7 @@ function PolicyBlock({ block }: { block: Block }) {
                   {row.map((cell, j) => (
                     <td
                       key={j}
-                      className="border-b border-line px-4 py-3 text-[14px] leading-[1.65] text-ink-soft last:border-r-0"
+                      className="border-b border-line px-4 py-3 text-[14px] leading-[1.65] text-ink-soft"
                     >
                       <LegalText text={cell} />
                     </td>

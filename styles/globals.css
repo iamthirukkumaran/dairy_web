@@ -9,20 +9,53 @@
   --line: #e7e0d4;
   --ink: #221f1c;
   --ink-soft: #635c53;
-  --clay: #b4643f;
-  --nav-height: 68px;
+  --clay: #9e5330;
+  --nav-height: 64px;
+
+  /*
+   * One vertical rhythm for the whole page. Every section pays half a band at
+   * the top and half at the bottom, so the gap between any two sections is
+   * exactly one band — no matter which two sections happen to be adjacent.
+   */
+  --band: 96px;
+
+  /* Kept in step with Container: max-w-content and px-6 / sm:px-8 / lg:px-12. */
+  --content: 1120px;
+  --gutter: 24px;
+}
+
+@media (min-width: 640px) {
+  :root {
+    --nav-height: 68px;
+    --band: 120px;
+    --gutter: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --band: 144px;
+    --gutter: 48px;
+  }
 }
 
 @layer base {
   html {
     -webkit-text-size-adjust: 100%;
-    scroll-padding-top: calc(var(--nav-height) + 16px);
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--nav-height) + 24px);
   }
 
   body {
     background-color: var(--ivory);
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
+    /*
+     * `clip` rather than `hidden`: it contains the full-bleed hero photograph
+     * on Windows, where 100vw is wider than the content box, without turning
+     * the body into a scroll container and breaking the sticky header.
+     */
+    overflow-x: clip;
   }
 
   ::selection {
@@ -44,6 +77,26 @@
 
   p {
     text-wrap: pretty;
+  }
+
+  img {
+    /* An image that fails to load should not collapse the layout around it. */
+    color: transparent;
+  }
+
+  /* Honour the system setting: no transitions, no smooth scrolling, no motion. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
@@ -85,5 +138,39 @@
     background:
       radial-gradient(60% 70% at 20% 25%, rgba(180, 100, 63, 0.09), transparent 70%),
       radial-gradient(55% 65% at 82% 70%, rgba(111, 140, 105, 0.1), transparent 70%);
+  }
+
+  /* The rhythm, applied. `section-t` / `section-b` split it for stacked bands. */
+  .section {
+    padding-top: calc(var(--band) / 2);
+    padding-bottom: calc(var(--band) / 2);
+  }
+
+  .section-t {
+    padding-top: calc(var(--band) / 2);
+  }
+
+  .section-b {
+    padding-bottom: calc(var(--band) / 2);
+  }
+
+  /* Blocks that read as one group sit closer than a full band apart. */
+  .section-tight-b {
+    padding-bottom: calc(var(--band) / 3);
+  }
+
+  /*
+   * Lets a child of the centred container run out to the right edge of the
+   * screen: back out the gutter, then whatever centring margin is left over.
+   * A percentage margin would resolve against the child's own box, not the
+   * container, which is why this is spelled out in terms of the viewport.
+   */
+  .bleed-right {
+    margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--content)) / 2)));
+  }
+
+  /* Interactive things all settle at the same speed. */
+  .transition-ui {
+    @apply transition-colors duration-200 ease-out;
   }
 }

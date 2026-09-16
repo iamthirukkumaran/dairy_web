@@ -8,13 +8,14 @@ const steps = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" aria-label="How it works" className="bg-ivory pb-20 sm:pb-24">
+    <section id="how-it-works" aria-label="How it works" className="section-b bg-ivory">
       <Container>
-        <ol className="grid gap-px overflow-hidden rounded-panel border border-line bg-line md:grid-cols-3">
+        {/* One hairline grid: the gap is the border, so the rules never double up. */}
+        <ol className="grid gap-px overflow-hidden rounded-panel border border-line bg-line sm:grid-cols-3">
           {steps.map((s) => (
-            <li key={s.n} className="bg-paper px-7 py-9">
+            <li key={s.n} className="flex flex-col bg-paper px-6 py-7 sm:px-6 sm:py-8 lg:px-8 lg:py-9">
               <p className="text-[12px] font-semibold tabular-nums tracking-wide2 text-clay">{s.n}</p>
-              <h3 className="heading mt-3 text-[19px] text-ink">{s.title}</h3>
+              <h3 className="heading mt-3 text-[18px] text-ink sm:text-[19px]">{s.title}</h3>
               <p className="mt-2 text-[15px] leading-[1.6] text-ink-soft">{s.body}</p>
             </li>
           ))}

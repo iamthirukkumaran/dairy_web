@@ -16,8 +16,8 @@ const config: Config = {
         line: '#E7E0D4',
         ink: '#221F1C',
         'ink-soft': '#635C53',
-        'ink-faint': '#968F85',
-        clay: '#B4643F',
+        'ink-faint': '#706A62',
+        clay: '#9E5330',
         sage: '#6F8C69',
       },
       fontFamily: {
