@@ -1,6 +1,7 @@
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { Hero } from '@/sections/Hero';
+import { VoiceToDiary } from '@/sections/VoiceToDiary';
 import { Remember } from '@/sections/Remember';
 import { HowItWorks } from '@/sections/HowItWorks';
 import { Connections } from '@/sections/Connections';
@@ -19,6 +20,7 @@ export default function HomePage() {
       <Navbar />
       <main id="main">
         <Hero />
+        <VoiceToDiary />
         <Remember />
         <HowItWorks />
         <Connections />
