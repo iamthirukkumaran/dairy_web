@@ -20,21 +20,27 @@ export default function PrivacyPage() {
       <main id="main">
         <Container className="section">
           <div className="mx-auto max-w-2xl text-center">
-            <p className="eyebrow">Privacy</p>
-            <h1 className="mt-3 display text-[clamp(1.9rem,4vw,2.6rem)] text-ink">
-              A diary should stay a diary.
+            <span className="eyebrow text-clay">Zero AI · Absolute Confidentiality</span>
+            <h1 className="mt-3 display text-[clamp(2.1rem,5vw,3rem)] text-ink">
+              A personal diary should
+              <br />
+              <span className="italic font-normal text-clay">always stay personal.</span>
             </h1>
-            <p className="mt-5 text-[16px] leading-[1.65] text-ink-soft">
-              Your entries are written for one reader. You decide how much Aura does, and you can
-              take everything with you or delete it at any time.
+            <p className="mt-5 text-[16px] leading-[1.75] text-ink-soft">
+              Your reflections are recorded for one reader: you. Aura is intentionally built without generative AI models, language scraping algorithms, or behavioral tracking.
             </p>
           </div>
 
-          <ul className="mt-14 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-14 grid gap-5 sm:grid-cols-2">
             {privacyControls.map((item) => (
-              <li key={item.title} className="rounded-card border border-line bg-paper p-6">
-                <h2 className="text-[15px] font-medium text-ink">{item.title}</h2>
-                <p className="mt-2 text-[14px] leading-[1.7] text-ink-soft">
+              <li key={item.title} className="card card-hover border border-line bg-paper p-6 sm:p-7 shadow-soft">
+                <div className="flex items-center gap-2.5">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-cream text-clay">
+                    ✓
+                  </span>
+                  <h2 className="text-[16px] font-semibold text-ink">{item.title}</h2>
+                </div>
+                <p className="mt-3 text-[14px] leading-[1.7] text-ink-soft">
                   {item.body}
                 </p>
               </li>

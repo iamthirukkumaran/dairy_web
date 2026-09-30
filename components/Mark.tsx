@@ -22,9 +22,11 @@ export function Mark({ className }: { className?: string }) {
 /** The wordmark, mark and name together. */
 export function Wordmark({ className }: { className?: string }) {
   return (
-    <span className={cn('inline-flex items-center gap-2', className)}>
-      <Mark className="h-6 w-6 text-clay" />
-      <span className="text-[19px] font-semibold tracking-display text-ink">Aura</span>
+    <span className={cn('inline-flex items-center gap-2.5', className)}>
+      <span className="flex h-8 w-8 items-center justify-center rounded-full bg-cream/90 border border-line/80 shadow-soft">
+        <Mark className="h-4 w-4 text-clay" />
+      </span>
+      <span className="font-serif text-[21px] font-medium tracking-tight text-ink">Aura</span>
     </span>
   );
 }

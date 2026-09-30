@@ -96,7 +96,7 @@ export const terms: LegalDoc = {
         },
         {
           kind: 'p',
-          text: 'We will not publish your diary, share it with other users, sell it, or use it in marketing. We will not use your content to train AI models except as described in section 5 of the Privacy Policy, and never without asking you first.',
+          text: 'We will not publish your diary, share it with other users, sell it, or use it in marketing. We do not deploy artificial intelligence or language model training on your content, and we will never use your private journal entries to train machine learning systems.',
         },
       ],
     },
@@ -125,16 +125,16 @@ export const terms: LegalDoc = {
       ],
     },
     {
-      id: 'ai-limits',
-      heading: '7. AI output, and what Aura is not',
+      id: 'transcription-limits',
+      heading: '7. Transcription accuracy, and what Aura is not',
       blocks: [
         {
           kind: 'p',
-          text: 'Aura writes with the help of automated speech recognition and language models. They misheard things, miss things, and occasionally invent things. An entry Aura writes is a draft of your day for you to correct — not a record of fact, not evidence, and not a transcript you should rely on for any legal, medical or financial purpose.',
+          text: 'Aura provides audio transcription and personal journaling tools to capture your voice and reflections. Automated dictation may occasionally mishear speech or background audio. Entries are personal records created by and for you—not legal records, medical files, or sworn transcripts.',
         },
         {
           kind: 'p',
-          text: 'Aura is not a medical device, a mental health service, a diagnosis, a therapy, or professional advice of any kind. Nothing it writes or suggests is a substitute for a qualified professional.',
+          text: 'Aura is a personal diary and keepsake printing service. It is not a medical device, a mental health service, a diagnosis, a therapy, or professional advice of any kind. Aura does not use AI bots, automated emotional analysis, or algorithmic advice.',
         },
         {
           kind: 'note',
@@ -220,7 +220,7 @@ export const terms: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: 'Beyond what these Terms and applicable law expressly provide, the service is provided as it is and as it is available. We do not warrant that it will be uninterrupted, secure against every attack, free of errors, or that transcription and AI output will be accurate.',
+          text: 'Beyond what these Terms and applicable law expressly provide, the service is provided as it is and as it is available. We do not warrant that it will be uninterrupted, secure against every attack, free of errors, or that speech transcription will be error-free in all acoustic environments.',
         },
         {
           kind: 'p',

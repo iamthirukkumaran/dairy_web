@@ -10,16 +10,24 @@ export function LegalDocument({ doc }: { doc: LegalDoc }) {
   return (
     <Container className="section">
       <div className="mx-auto max-w-[760px]">
-        <NavLink
-          href="/legal"
-          className="transition-ui inline-flex items-center py-1 text-[13px] text-ink-soft hover:text-ink"
-        >
-          ← All policies
-        </NavLink>
+        <div className="flex flex-wrap items-center justify-between gap-4 border-b border-line/80 pb-4">
+          <NavLink
+            href="/legal"
+            className="transition-ui inline-flex items-center gap-1.5 py-1 text-[13px] font-medium text-ink-soft hover:text-clay"
+          >
+            ← All legal policies
+          </NavLink>
+          <div className="flex items-center gap-2">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-sage/10 px-2.5 py-0.5 text-[11px] font-medium text-sage border border-sage/20">
+              <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+              Officially in force
+            </span>
+          </div>
+        </div>
 
-        <h1 className="mt-6 display text-[clamp(1.85rem,3.8vw,2.5rem)] text-ink">{doc.title}</h1>
+        <h1 className="mt-6 display text-[clamp(2.1rem,4vw,2.8rem)] text-ink">{doc.title}</h1>
 
-        <p className="mt-4 text-[13px] text-ink-faint">
+        <p className="mt-3 text-[13.5px] text-ink-faint">
           <LegalText text={`Effective ${entity.effectiveDate} · Last updated ${entity.lastUpdated}`} />
         </p>
 

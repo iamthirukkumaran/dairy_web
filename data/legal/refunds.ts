@@ -60,13 +60,13 @@ export const refunds: LegalDoc = {
           head: ['When you cancel', 'What happens'],
           rows: [
             ['Before the order goes to print', 'Cancelled in full, refunded in full'],
-            ['After printing has started', `The book is already being manufactured to your specification and cannot be cancelled. ${'[[PARTIAL_CANCELLATION_TERMS]]'}`],
+            ['After printing has started', 'The book is already being manufactured to your unique personal specification and cannot be cancelled or refunded unless physically defective.'],
             ['After dispatch', 'Not cancellable, but sections 3 and 4 still apply if anything is wrong with it'],
           ],
         },
         {
           kind: 'p',
-          text: `Printing usually begins ${'[[PRINT_START_WINDOW]]'} after you confirm the order. You can cancel from your order screen in the app, or by writing to ${entity.supportEmail} with your order number.`,
+          text: `Printing usually begins 2 hours after you confirm the order. You can cancel from your order screen in the app, or by writing to ${entity.supportEmail} with your order number.`,
         },
         {
           kind: 'p',
@@ -84,7 +84,7 @@ export const refunds: LegalDoc = {
         },
         {
           kind: 'p',
-          text: `Tell us within ${'[[DAMAGE_REPORT_WINDOW]]'} of delivery, at ${entity.supportEmail}, with your order number and photographs of the problem and the packaging. We do not ask you to post the book back before we act, and we do not charge you for the replacement or its delivery.`,
+          text: `Tell us within 7 calendar days of delivery, at ${entity.supportEmail}, with your order number and photographs of the problem and the packaging. We do not ask you to post the book back before we act, and we do not charge you for the replacement or its delivery.`,
         },
         {
           kind: 'p',
@@ -123,8 +123,8 @@ export const refunds: LegalDoc = {
           kind: 'ul',
           items: [
             'A refund goes back to the original payment method. We cannot redirect it to a different card, account or person.',
-            `We initiate an approved refund within ${'[[REFUND_INITIATION_WINDOW]]'} of approving it.`,
-            `Your bank or card issuer then takes its own time to post it — usually ${'[[REFUND_SETTLEMENT_WINDOW]]'}. That part is outside our control.`,
+            'We initiate an approved refund within 48 hours of approving it.',
+            'Your bank or card issuer then takes its own time to post it — usually 5 to 7 business days. That part is outside our control.',
             'Where a refund is made, any applicable taxes we collected are refunded with it.',
             'Delivery charges are refunded in full when the fault is ours, and not refunded when an order is cancelled after dispatch for a reason unrelated to a fault.',
           ],

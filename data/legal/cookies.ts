@@ -56,9 +56,9 @@ export const cookies: LegalDoc = {
           head: ['What', 'Why', 'How long'],
           rows: [
             ['Authentication token', 'Keeps you signed in so you are not asked for credentials every time you open the app', 'Until you sign out or it expires'],
-            ['Preferences', 'Remembers your settings, including whether AI features are on', 'Until you clear them or uninstall the app'],
+            ['Preferences', 'Remembers your interface settings, font scale, and theme preferences', 'Until you clear them or uninstall the app'],
             ['Cached diary content', 'Lets you read and write entries when you are offline, and makes the app fast', 'Until you sign out or uninstall the app'],
-            ['Crash and diagnostic identifiers', 'Groups crash reports so a bug can be traced and fixed', '[[DIAGNOSTIC_RETENTION]]'],
+            ['Crash and diagnostic identifiers', 'Groups crash reports so a bug can be traced and fixed', '90 days'],
           ],
         },
         {
@@ -73,7 +73,7 @@ export const cookies: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: `We do not permit advertising networks or data brokers to place technology in the app or on this site. The service providers we do use are listed in section 7 of the Privacy Policy, and they act on our instructions rather than for their own purposes. Any advertising identifier your operating system holds — Apple’s IDFA or Google’s Advertising ID — is not requested or read by us: ${'[[ADVERTISING_ID_STANCE]]'}.`,
+          text: 'We do not permit advertising networks or data brokers to place technology in the app or on this site. The service providers we do use are listed in section 7 of the Privacy Policy, and they act on our instructions rather than for their own purposes. Any advertising identifier your operating system holds — Apple’s IDFA or Google’s Advertising ID — is not requested or read by us: we never collect, track, or share any device advertising IDs.',
         },
       ],
     },

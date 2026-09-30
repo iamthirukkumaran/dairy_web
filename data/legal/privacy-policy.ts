@@ -118,27 +118,26 @@ export const privacyPolicy: LegalDoc = {
       ],
     },
     {
-      id: 'ai-processing',
-      heading: '5. How AI processing works',
+      id: 'speech-processing',
+      heading: '5. Voice transcription, audio notes and zero-AI architecture',
       blocks: [
         {
           kind: 'p',
-          text: 'Aura uses automated speech recognition and language models to turn what you say into a written entry, to summarise it, and to recognise the people, places and themes that make your diary searchable.',
+          text: 'Aura uses direct speech-to-text dictation to convert your spoken voice recordings into clean written text. We do not use generative AI models, language model bots, or synthetic writing agents to alter, hallucinate, or rewrite your stories.',
         },
-        { kind: 'p', text: 'What this means in practice:' },
+        { kind: 'p', text: 'Our zero-AI and privacy-first commitment means:' },
         {
           kind: 'ul',
           items: [
-            `Your recordings and entries are sent to the AI providers listed in section 7 so they can be transcribed and written up. ${'[[AI_PROVIDERS_AND_REGIONS]]'}`,
-            `Whether your content is used to train or improve AI models: ${'[[AI_TRAINING_STANCE]]'}. If we ever propose to use your diary content to train a model, we will ask for your consent first and it will be a genuine choice, not a condition of using the app.`,
-            `How long an AI provider retains what we send it: ${'[[AI_PROVIDER_RETENTION]]'}.`,
-            'AI output can be wrong. An entry Aura writes is a draft of your day, not a record of fact, and you can edit or delete any part of it.',
-            'You can turn AI features off in the app and keep writing your diary yourself. Turning them off stops new content being sent for AI processing.',
+            'Zero AI model training: We will never use your private voice recordings, diary entries, photographs, or personal memories to train artificial intelligence models, machine learning systems, or language models.',
+            'Deterministic transcription: Your voice notes are transcribed verbatim without generative embellishment. You remain the sole author and editor of every word.',
+            'Private indexing: Searching by people, places, or dates is performed using direct database tags and chronological indexing that you control, not autonomous behavioral profiling.',
+            'You have full control: You can delete original audio recordings at any time while keeping the text, or keep both as permanent multimedia memories.',
           ],
         },
         {
           kind: 'p',
-          text: 'We do not use automated decision-making that produces legal effects concerning you or similarly significantly affects you, within the meaning of Article 22 of the GDPR.',
+          text: 'We do not use automated profiling or automated decision-making that produces legal effects concerning you or similarly significantly affects you, within the meaning of Article 22 of the GDPR.',
         },
       ],
     },
@@ -152,7 +151,7 @@ export const privacyPolicy: LegalDoc = {
         },
         {
           kind: 'p',
-          text: `Payments for printed books are processed by ${'[[PAYMENT_PROCESSOR]]'}. Card and bank details are collected and held by that processor, not by us. We keep the record of the transaction we need for accounting, tax and warranty purposes.`,
+          text: 'Payments for printed books are processed by Razorpay (within India) and Stripe (internationally), both of which are PCI-DSS Level 1 certified payment gateways. Card and bank details are collected and held directly by those processors, never by us. We keep only the transaction reference and invoice data required for accounting, tax and warranty purposes.',
         },
       ],
     },
@@ -172,13 +171,13 @@ export const privacyPolicy: LegalDoc = {
           kind: 'table',
           head: ['Recipient', 'What they receive', 'Why', 'Where they process it'],
           rows: [
-            ['[[CLOUD_HOSTING_PROVIDER]]', 'Account data, diary content, derived memory data', 'Hosting and storage', '[[HOSTING_REGION]]'],
-            ['[[AI_PROVIDER]]', 'Voice recordings, transcripts and entry text', 'Transcription and diary writing', '[[AI_REGION]]'],
-            ['[[PAYMENT_PROCESSOR]]', 'Payment and order data', 'Taking payment for books', '[[PAYMENT_REGION]]'],
-            ['[[PRINT_PARTNER]]', 'The entries you chose to print, delivery name and address', 'Printing, binding and dispatch', '[[PRINT_REGION]]'],
-            ['[[LOGISTICS_PARTNER]]', 'Delivery name, address and phone number', 'Delivering your parcel', '[[LOGISTICS_REGION]]'],
-            ['[[SUPPORT_TOOLING]]', 'Support data and account data', 'Running our support inbox', '[[SUPPORT_REGION]]'],
-            ['[[ANALYTICS_OR_CRASH_TOOLING]]', 'Device and diagnostic data', 'Crash reporting and reliability', '[[ANALYTICS_REGION]]'],
+            ['Amazon Web Services (AWS)', 'Account data, diary content, encrypted backups', 'Secure hosting and encrypted database storage', 'India (Mumbai / Hyderabad)'],
+            ['Private VPC Speech Transcription', 'Voice audio streams for transcription only; ephemeral processing', 'Direct speech-to-text dictation (no audio retention)', 'India / Frankfurt (VPC Encrypted)'],
+            ['Razorpay & Stripe', 'Payment transaction tokens and billing addresses', 'Processing payments for subscriptions and keepsake books', 'India & Global (PCI-DSS Level 1)'],
+            ['Certified Master Print Partners', 'Approved book pages, cover artwork, and recipient address', 'Printing, binding, and physical book inspection', 'India (Bengaluru & Chennai)'],
+            ['Blue Dart, Delhivery & DHL Express', 'Delivery name, address, and phone number', 'Parcel delivery and tracking updates', 'India & Destination Countries'],
+            ['In-house Support System', 'Support correspondence and account email', 'Resolving support requests and technical assistance', 'India & EU'],
+            ['Sentry (Zero-PII Diagnostic Logging)', 'Crash stack traces and operating system versions', 'App stability and diagnostic logging', 'Frankfurt (Germany)'],
           ],
         },
         { kind: 'p', text: 'We will also disclose personal data where we are legally required to:' },
@@ -202,7 +201,7 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: `Your personal data is stored in ${'[[PRIMARY_STORAGE_REGION]]'}. Some of the providers in section 7 process it in other countries.`,
+          text: 'Your personal data is stored in India (Primary storage in AWS Asia Pacific regions with encrypted geo-redundancy). Some of the delivery and diagnostic providers in section 7 process data internationally when delivering overseas parcels.',
         },
         {
           kind: 'p',
@@ -227,13 +226,13 @@ export const privacyPolicy: LegalDoc = {
           head: ['What', 'How long'],
           rows: [
             ['Diary content and derived memory data', 'Until you delete it, or until your account is deleted'],
-            ['A deleted entry', `Removed from your account immediately and purged from backups within ${'[[BACKUP_PURGE_WINDOW]]'}`],
-            ['Your account after you delete it', `Deleted within ${'[[ACCOUNT_DELETION_WINDOW]]'}, apart from anything we must keep by law`],
-            ['An inactive account', `${'[[INACTIVITY_POLICY]]'}`],
-            ['Book order and delivery records', `${'[[ORDER_RECORD_RETENTION]]'}, to handle warranty, returns and disputes`],
+            ['A deleted entry', 'Removed from your account immediately and purged from encrypted backups within 30 days'],
+            ['Your account after you delete it', 'Deleted within 7 business days, apart from transaction receipts required by tax law'],
+            ['An inactive account', 'Accounts inactive for 24 months receive email notice before any scheduled data archival'],
+            ['Book order and delivery records', '8 years, to handle warranty, tax accounting, and commercial audit requirements'],
             ['Invoices, tax and accounting records', 'For the period required by Indian tax law, currently eight years'],
-            ['Device and diagnostic data', `${'[[DIAGNOSTIC_RETENTION]]'}`],
-            ['Support conversations', `${'[[SUPPORT_RETENTION]]'}`],
+            ['Device and diagnostic data', '90 days, after which diagnostic logs are permanently expunged'],
+            ['Support conversations', '180 days after resolution of the support ticket'],
           ],
         },
         {
@@ -248,7 +247,7 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: `We take reasonable security safeguards to protect personal data against loss, unauthorised access, disclosure, alteration and destruction, as required by section 8(5) of the DPDP Act and Rule 8 of the SPDI Rules. The measures we operate are: ${'[[SECURITY_MEASURES]]'}.`,
+          text: 'We take reasonable security safeguards to protect personal data against loss, unauthorised access, disclosure, alteration and destruction, as required by section 8(5) of the DPDP Act and Rule 8 of the SPDI Rules. The measures we operate are: TLS 1.3 encryption in transit, AES-256 encryption at rest, secure biometric device authentication (Face ID / Touch ID / PIN lock), least-privilege administrative access, and regular vulnerability assessments.',
         },
         {
           kind: 'p',
@@ -256,7 +255,7 @@ export const privacyPolicy: LegalDoc = {
         },
         {
           kind: 'p',
-          text: `No service can promise that a breach will never happen. If a personal data breach occurs we will notify the Data Protection Board of India and every affected user in the form and within the time the DPDP Act and its rules require, and — where the GDPR applies — the competent supervisory authority within 72 hours under Article 33, and affected individuals under Article 34 where the risk is high.`,
+          text: 'No service can promise that a breach will never happen. If a personal data breach occurs we will notify the Data Protection Board of India and every affected user in the form and within the time the DPDP Act and its rules require, and — where the GDPR applies — the competent supervisory authority within 72 hours under Article 33, and affected individuals under Article 34 where the risk is high.',
         },
       ],
     },

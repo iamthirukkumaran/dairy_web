@@ -9,8 +9,8 @@ export const privacyControls = [
     body: 'Your diary is written for one reader. Aura does not publish it, share it, or turn it into a feed.',
   },
   {
-    title: 'Control the AI',
-    body: 'Choose how much Aura does for you — full journaling, light summaries, or nothing at all. You can turn AI features off and keep writing.',
+    title: 'Zero AI & Pure Authenticity',
+    body: 'Aura is built on human reflection, not generative AI. We never deploy language models or algorithms to rewrite or train on your memories. Your diary remains strictly your own voice.',
   },
   {
     title: 'Export anything',

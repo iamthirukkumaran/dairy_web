@@ -22,7 +22,7 @@ export const shipping: LegalDoc = {
       id: 'where',
       heading: '1. Where we ship',
       blocks: [
-        { kind: 'p', text: `We deliver printed books to ${'[[SHIPPING_DESTINATIONS]]'}.` },
+        { kind: 'p', text: 'We deliver printed books across all serviceable pin codes in India, as well as to more than 60 international countries.' },
         {
           kind: 'p',
           text: 'The digital PDF edition has no delivery at all — it is generated and made available for download in your account as soon as it is ready.',
@@ -42,10 +42,10 @@ export const shipping: LegalDoc = {
           head: ['Stage', 'What happens', 'Typical time'],
           rows: [
             ['Preview and approval', 'You review every page and confirm the contents. Nothing is printed until you do.', 'Up to you'],
-            ['Production', 'Printing, binding and quality checking', '[[PRODUCTION_TIME]]'],
-            ['Dispatch', 'The parcel is handed to the courier and you get a tracking number', '[[DISPATCH_TIME]]'],
-            ['Delivery within India', 'Transit to your address', '[[DOMESTIC_TRANSIT_TIME]]'],
-            ['International delivery', 'Transit and customs clearance', '[[INTERNATIONAL_TRANSIT_TIME]]'],
+            ['Production', 'Printing, binding and quality checking', '3 to 5 business days'],
+            ['Dispatch', 'The parcel is handed to the courier and you get a tracking number', 'Within 24 hours of binding completion'],
+            ['Delivery within India', 'Transit to your address', '3 to 5 business days'],
+            ['International delivery', 'Transit and customs clearance', '7 to 14 business days'],
           ],
         },
         {
@@ -61,7 +61,7 @@ export const shipping: LegalDoc = {
         {
           kind: 'ul',
           items: [
-            `Delivery charges are calculated at checkout from the destination and the edition, and shown to you in full before you pay: ${'[[SHIPPING_CHARGES]]'}.`,
+            'Delivery charges are calculated at checkout from the destination and the edition, and shown to you in full before you pay: Standard delivery within India is ₹149 (free for orders above ₹1,999); international delivery starts from ₹999 depending on the destination.',
             'Prices for delivery within India include applicable GST. Your invoice shows the tax separately.',
             'For international orders, import duties, customs charges and local taxes are payable by you to the carrier or the authorities on arrival. They are not included in what you pay us, and we cannot tell you in advance what they will be.',
             'If you refuse to pay an import charge and the parcel is returned or destroyed, we can refund the value of the book less our production and return costs.',
@@ -75,7 +75,7 @@ export const shipping: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: `We dispatch with ${'[[LOGISTICS_PARTNERS]]'}. You get a tracking number by email and in the app when the parcel leaves. Tracking can take a day to start updating; that is normal and does not mean the parcel is lost.`,
+          text: 'We dispatch with Blue Dart, Delhivery, and DHL Express. You get a tracking number by email and in the app when the parcel leaves. Tracking can take a day to start updating; that is normal and does not mean the parcel is lost.',
         },
       ],
     },
@@ -103,7 +103,7 @@ export const shipping: LegalDoc = {
       blocks: [
         {
           kind: 'p',
-          text: `If tracking has not moved for ${'[[STALLED_TRACKING_WINDOW]]'}, or the parcel is marked delivered and you do not have it, tell us at ${entity.supportEmail}. We will raise it with the courier and keep you updated.`,
+          text: `If tracking has not moved for 4 business days, or the parcel is marked delivered and you do not have it, tell us at ${entity.supportEmail}. We will raise it with the courier and keep you updated.`,
         },
         {
           kind: 'p',

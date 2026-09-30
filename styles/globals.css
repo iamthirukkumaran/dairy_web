@@ -102,21 +102,20 @@
 
 @layer components {
   /*
-   * Headlines are the same typeface as everything else. What separates them is
-   * weight, tracking and leading — not a second family, not an italic, and not
-   * a second colour.
+   * Luxury editorial display typography using Newsreader serif.
+   * Gives the diary an heirloom, timeless book feel.
    */
   .display {
-    @apply tracking-display;
-    font-weight: 500;
-    line-height: 1.08;
+    @apply font-serif tracking-tight text-ink;
+    font-weight: 450;
+    line-height: 1.14;
   }
 
-  /* Section-level headings: the same idea, one step down. */
+  /* Section-level headings */
   .heading {
     @apply tracking-editorial;
     font-weight: 550;
-    line-height: 1.2;
+    line-height: 1.25;
   }
 
   /* Opt out of `text-wrap: balance` where the line breaks are written by hand. */
@@ -130,14 +129,29 @@
   }
 
   .card {
-    @apply rounded-card border border-line bg-paper;
+    @apply rounded-card border border-line bg-paper transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-card hover:border-ink/20;
   }
 
   /* A soft warm wash used behind the image collages. */
   .wash {
     background:
-      radial-gradient(60% 70% at 20% 25%, rgba(180, 100, 63, 0.09), transparent 70%),
-      radial-gradient(55% 65% at 82% 70%, rgba(111, 140, 105, 0.1), transparent 70%);
+      radial-gradient(65% 75% at 20% 20%, rgba(158, 83, 48, 0.08), transparent 70%),
+      radial-gradient(60% 70% at 80% 80%, rgba(111, 140, 105, 0.09), transparent 70%),
+      #fbf7f0;
+  }
+
+  /* Audio waveform bars animation */
+  @keyframes soundwave {
+    0%, 100% { height: 6px; }
+    50% { height: 22px; }
+  }
+
+  .waveform-bar {
+    animation: soundwave 1.2s ease-in-out infinite;
   }
 
   /* The rhythm, applied. `section-t` / `section-b` split it for stacked bands. */
@@ -159,18 +173,12 @@
     padding-bottom: calc(var(--band) / 3);
   }
 
-  /*
-   * Lets a child of the centred container run out to the right edge of the
-   * screen: back out the gutter, then whatever centring margin is left over.
-   * A percentage margin would resolve against the child's own box, not the
-   * container, which is why this is spelled out in terms of the viewport.
-   */
   .bleed-right {
     margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--content)) / 2)));
   }
 
   /* Interactive things all settle at the same speed. */
   .transition-ui {
-    @apply transition-colors duration-200 ease-out;
+    @apply transition-all duration-200 ease-out;
   }
 }

@@ -1,21 +1,22 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Inter, Newsreader } from 'next/font/google';
 import '@/styles/globals.css';
 import { site } from '@/data/site';
 
 /** Metadata URLs are not rewritten by `basePath`, so prefix them by hand. */
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
-/**
- * One family for the whole site. The optical-size axis gives large text the
- * tighter apertures and spacing of a display cut, which is the job the old
- * serif was doing badly.
- */
 const sans = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-sans',
-  axes: ['opsz'],
+});
+
+const serif = Newsreader({
+  subsets: ['latin'],
+  display: 'swap',
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
 });
 
 export const viewport: Viewport = {
@@ -34,11 +35,12 @@ export const metadata: Metadata = {
   applicationName: site.name,
   keywords: [
     'voice journal',
-    'AI diary',
+    'private voice diary',
     'personal memory app',
     'year in review book',
-    'printed journal',
+    'printed keepsake journal',
     'daily journaling app',
+    'zero ai private journal',
   ],
   alternates: { canonical: '/' },
   // Served as a plain static asset from /public: Next's generated icon route
@@ -71,7 +73,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={sans.variable}>
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
       <body className="font-sans antialiased">{children}</body>
     </html>
   );

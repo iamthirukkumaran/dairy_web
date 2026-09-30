@@ -1,9 +1,9 @@
 export const site = {
   name: 'Aura',
   tagline: 'Your life, beautifully remembered.',
-  supportingLine: "Talk about your day. We'll remember the rest.",
+  supportingLine: 'Speak your thoughts. Preserve your life.',
   description:
-    'Aura turns the stories you tell about your day into a beautiful personal diary, helps you rediscover your memories, and lets you turn your year into a book.',
+    'Aura turns your daily reflections, voice notes, and photographs into a beautiful personal journal, completely private with zero AI, and binds your year into a timeless printed keepsake book.',
   url: 'https://aura.app',
   year: 2026,
   /** Wire these to the real store listings before launch. */
@@ -17,9 +17,10 @@ export const site = {
 /** Hrefs are absolute so the nav works from every page, not just the home page. */
 export const navLinks = [
   { label: 'How it works', href: '/#how-it-works' },
-  { label: 'Your Book', href: '/#book' },
+  { label: 'Keepsake Book', href: '/#book' },
   { label: 'Pricing', href: '/#pricing' },
   { label: 'Privacy', href: '/privacy' },
+  { label: 'Policies', href: '/legal' },
 ] as const;
 
 export const footerColumns = [

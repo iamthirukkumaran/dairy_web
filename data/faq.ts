@@ -8,30 +8,34 @@ export type FaqItem = { q: string; a: string };
 export const faqs: FaqItem[] = [
   {
     q: 'How does Aura work?',
-    a: 'You open Aura and talk about your day the way you would tell a friend. Aura writes the entry for you in your own voice, and keeps the parts that mattered so you can find them again later.',
+    a: 'You open Aura and speak freely about your day, or write by hand in the app. Aura transcribes your voice recordings accurately, organizes your reflections chronologically, and preserves the people and places that shaped your life.',
+  },
+  {
+    q: 'Do you use AI or language models on my diary?',
+    a: 'No. Aura is deliberately built with zero generative AI, synthetic ghostwriting, or model training. Your entries are pure, authentic human reflections recorded in your own words, completely private to you.',
   },
   {
     q: 'Do I have to type?',
-    a: 'No. Speaking is the whole point — the blank page is what stops most people from keeping a diary. Typing is there if you prefer it.',
+    a: 'No. Voice recording is effortless—you can speak as if leaving a note for your future self. Pure dictation eliminates the friction of a blank page, but a full rich-text editor is always available if you prefer typing.',
   },
   {
-    q: 'Can I edit the diary?',
-    a: 'Always. Every entry Aura writes is yours to rewrite, trim or delete. Your edits become the version Aura remembers.',
+    q: 'Can I edit my entries and audio?',
+    a: 'Always. Every entry is yours to edit, expand, format, or delete at any time. You can choose to keep the original audio note alongside the text, or keep only the transcript.',
   },
   {
     q: 'Where are my memories stored?',
-    a: 'Your entries are stored in your Aura account so they sync across your devices. The exact storage and processing details are described in full in the Privacy Policy.',
+    a: 'Your entries and audio notes are encrypted with AES-256 at rest and TLS 1.3 in transit. They sync securely across your devices with optional biometric lock (Face ID / Fingerprint).',
   },
   {
     q: 'Can I export my diary?',
-    a: 'Yes. You can export your entries as plain text or a typeset PDF, so your writing is never locked inside one app.',
+    a: 'Yes. You can export your entries anytime as clean plain text, markdown, or a beautifully typeset print-ready PDF, with no lock-in.',
   },
   {
-    q: 'Can I print my year?',
-    a: 'Yes. Any year can be laid out as a print-ready book, and Aura can print and bind it for you.',
+    q: 'Can I turn my year into a printed book?',
+    a: 'Yes. Any full year or custom date range can be compiled into a printed book. You can choose between softcover, cloth-bound heirloom hardcover, or collector’s slipcase, with complete page-by-page preview before ordering.',
   },
   {
     q: 'Can I delete my data?',
-    a: 'Yes. You can delete a single entry, a stretch of time, or your entire account and everything in it.',
+    a: 'Yes. You can permanently delete an individual entry, an entire season, or your entire account with immediate purge from our systems.',
   },
 ];
