@@ -13,8 +13,8 @@ export function Connections() {
     <section aria-label="Aura Connections" className="section-b bg-ivory">
       <Container>
         <div className="wash rounded-panel border border-line/80 px-6 py-10 sm:px-10 sm:py-14 shadow-soft">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.65fr)_minmax(0,1.35fr)] lg:items-center lg:gap-14">
-            <div className="max-w-sm">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-center lg:gap-12 xl:gap-16">
+            <div className="w-full max-w-md lg:max-w-lg">
               <span className="eyebrow text-clay">The Tapestry</span>
               <h2 className="display mt-2 text-[clamp(1.7rem,4vw,2.4rem)] text-ink">
                 Aura Connections

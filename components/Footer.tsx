@@ -10,10 +10,10 @@ export function Footer() {
   return (
     <footer className="border-t border-line bg-ivory">
       <Container className="py-12 sm:py-14">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.9fr)] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16">
           <div>
             <Wordmark />
-            <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-ink-soft">
+            <p className="mt-3 max-w-sm text-[15px] leading-relaxed text-ink-soft">
               {site.tagline}
             </p>
             <NavLink

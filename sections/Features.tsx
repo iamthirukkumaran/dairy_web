@@ -5,8 +5,8 @@ export function Features() {
   return (
     <section aria-label="What Aura remembers" className="section bg-paper">
       <Container>
-        <div className="grid gap-10 md:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] md:gap-14 lg:gap-16 items-center">
-          <div className="max-w-md">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16 items-center">
+          <div className="w-full max-w-xl">
             <span className="eyebrow text-clay">The Anatomy of a Day</span>
             <h2 className="display mt-3 text-[clamp(2rem,5vw,2.8rem)] text-ink">
               Every reflection,

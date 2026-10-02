@@ -20,7 +20,7 @@
   --band: 96px;
 
   /* Kept in step with Container: max-w-content and px-6 / sm:px-8 / lg:px-12. */
-  --content: 1120px;
+  --content: 1240px;
   --gutter: 24px;
 }
 
@@ -204,12 +204,18 @@
     padding-bottom: calc(var(--band) / 3);
   }
 
-  .bleed-right {
-    margin-right: calc(-1 * (var(--gutter) + max(0px, (100vw - var(--content)) / 2)));
-  }
 
   /* Interactive things all settle at the same speed. */
   .transition-ui {
     @apply transition-all duration-200 ease-out;
+  }
+
+  /* Clean no-scrollbar utility for mobile mockups */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }

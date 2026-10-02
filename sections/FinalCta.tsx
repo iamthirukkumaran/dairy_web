@@ -21,15 +21,15 @@ export function FinalCta() {
           <span className="h-1.5 w-1.5 rounded-full bg-sage" />
           Your Story Deserves Keeping
         </div>
-        <h2 className="display mx-auto max-w-2xl text-[clamp(2.2rem,6vw,3.2rem)] text-ink">
+        <h2 className="display mx-auto max-w-3xl text-[clamp(2.2rem,5vw,3.4rem)] text-ink">
           Start remembering your life,
           <br />
           <span className="italic font-normal text-clay">beginning tonight.</span>
         </h2>
-        <p className="mt-4 max-w-md mx-auto text-[16px] text-ink-soft leading-relaxed">
+        <p className="mt-4 max-w-xl mx-auto text-[16px] text-ink-soft leading-relaxed sm:text-[17px]">
           Record your daily reflections, keep the people and places you cherish, and hold your year in your hands.
         </p>
-        <div className="mx-auto mt-8 max-w-md">
+        <div className="mx-auto mt-8 max-w-lg">
           <StoreBadges align="center" />
         </div>
         <p className="mt-5 text-[12.5px] text-ink-faint">

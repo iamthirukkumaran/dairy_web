@@ -15,7 +15,7 @@ export function Faq() {
           </p>
         </div>
 
-        <div className="mx-auto mt-10 max-w-3xl divide-y divide-line/80 border-y border-line/80 sm:mt-12">
+        <div className="mx-auto mt-10 max-w-4xl divide-y divide-line/80 border-y border-line/80 sm:mt-12">
           {faqs.map((item) => (
             <details key={item.q} className="group py-1">
               <summary className="transition-ui flex cursor-pointer list-none items-center justify-between gap-4 py-5 text-[16px] font-medium text-ink hover:text-clay [&::-webkit-details-marker]:hidden">
@@ -26,7 +26,7 @@ export function Faq() {
                   </svg>
                 </span>
               </summary>
-              <p className="max-w-prose pb-6 pr-6 sm:pr-10 text-[14.5px] leading-[1.8] text-ink-soft">
+              <p className="max-w-3xl pb-6 pr-6 sm:pr-10 text-[14.5px] leading-[1.8] text-ink-soft">
                 {item.a}
               </p>
             </details>

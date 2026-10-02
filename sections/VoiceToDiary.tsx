@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { Container } from '@/components/ui/Container';
+import { IPhoneMockup } from '@/components/ui/IPhoneMockup';
 import { asset } from '@/lib/utils';
 
 type VoiceSample = {
@@ -121,17 +122,17 @@ export function VoiceToDiary() {
     <section aria-label="Voice to Diary Writing Animation" className="section-b bg-ivory">
       <Container>
         {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center mb-10 sm:mb-14">
+        <div className="mx-auto max-w-3xl text-center mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 rounded-full border border-clay/20 bg-cream/80 px-3.5 py-1 text-[11px] font-semibold tracking-wide2 uppercase text-clay backdrop-blur-sm shadow-soft">
             <span className="h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
             Live Experience
           </div>
-          <h2 className="display mt-3 text-[clamp(2.1rem,5vw,3rem)] text-ink">
+          <h2 className="display mt-3 text-[clamp(2.1rem,4.5vw,3rem)] text-ink">
             Speak your day.
             <br />
             <span className="italic font-normal text-clay">Watch it become your journal.</span>
           </h2>
-          <p className="mt-4 text-[16px] leading-[1.75] text-ink-soft">
+          <p className="mt-4 text-[16px] leading-[1.75] text-ink-soft sm:text-[17px]">
             Just speak the way you would to an old friend. Aura converts your audio directly into a private handwritten-style journal page, preserving your raw voice alongside the text.
           </p>
 
@@ -155,7 +156,7 @@ export function VoiceToDiary() {
         </div>
 
         {/* Interactive Experience Grid */}
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:gap-10 items-start">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 xl:gap-12 items-start">
           {/* Left: Live Audio Recording Studio Deck */}
           <div className="card border border-line bg-paper p-6 sm:p-8 shadow-card flex flex-col justify-between">
             <div>
@@ -252,88 +253,104 @@ export function VoiceToDiary() {
             </div>
           </div>
 
-          {/* Right: The Tactile Handwritten Journal Notebook */}
-          <div className="card relative overflow-hidden border border-line bg-paper shadow-lift">
-            {/* Notebook Header Bar */}
-            <div className="flex items-center justify-between border-b border-line bg-cream/50 px-6 py-3.5">
-              <div className="flex items-center gap-2 text-[12px] text-ink font-medium">
-                <span className="h-2 w-2 rounded-full bg-clay" />
-                <span>Personal Journal</span>
-                <span className="text-line">/</span>
-                <span className="text-ink-faint">{sample.date}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-[11px] font-mono text-ink-faint">{sample.time}</span>
-                <span className="rounded-pill bg-paper border border-line px-2 py-0.5 text-[10px] font-semibold text-clay">
-                  PAGE 142
-                </span>
-              </div>
-            </div>
-
-            {/* Notebook Lined Paper Body */}
-            <div className="lined-paper p-6 sm:p-8 min-h-[360px] relative">
-              {/* Red Margin Hairline */}
-              <div className="absolute left-10 sm:left-14 top-0 bottom-0 w-px bg-clay/20 pointer-events-none" />
-
-              <div className="pl-6 sm:pl-10">
-                <h3 className="font-serif text-[22px] sm:text-[24px] font-medium text-ink tracking-tight mb-2">
-                  {sample.tabLabel}
-                </h3>
-
-                <p className="font-serif text-[16px] sm:text-[17px] text-ink leading-[32px] whitespace-pre-line">
-                  {currentText}
-                  {!isComplete && isPlaying && (
-                    <span className="inline-block w-2 h-5 ml-1 bg-clay align-middle cursor-caret" />
-                  )}
-                </p>
-
-                {/* Attached Photo preview once words progress past 50% */}
-                {charCount > totalChars * 0.4 && (
-                  <div className="mt-6 flex items-start gap-4 transition-all duration-700 animate-fadeIn">
-                    <div className="relative overflow-hidden rounded-lg border-2 border-paper shadow-card max-w-[140px] shrink-0 rotate-[-2deg]">
-                      <img
-                        src={asset(sample.image)}
-                        alt={sample.tabLabel}
-                        className="aspect-[4/3] w-full object-cover"
-                        width={280}
-                        height={210}
-                      />
-                    </div>
-                    <div className="pt-2">
-                      <span className="text-[11px] font-semibold tracking-wider uppercase text-clay block">
-                        Photo Attached
-                      </span>
-                      <span className="text-[12px] text-ink-faint block mt-0.5">{sample.location}</span>
-                    </div>
+          {/* Right: The Aura App running in a hyper-realistic iPhone Mockup */}
+          <div className="w-full flex justify-center">
+            <IPhoneMockup
+              statusTime="7:42"
+              dynamicIslandContent={
+                isPlaying && !isComplete ? (
+                  <div className="flex items-center gap-1 pl-1">
+                    <span className="h-1.5 w-1.5 rounded-full bg-clay animate-pulse" />
+                    <span className="text-[9px] font-medium tracking-tight text-white/90">Recording</span>
                   </div>
-                )}
-
-                {/* Tags row */}
-                <div className="mt-8 flex flex-wrap gap-2 pt-2">
-                  {sample.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-pill border border-line bg-paper/90 px-3 py-1 text-[11px] font-medium text-ink-soft shadow-soft"
-                    >
-                      #{tag}
-                    </span>
-                  ))}
+                ) : (
+                  <span className="h-1.5 w-1.5 rounded-full bg-sage" />
+                )
+              }
+            >
+              {/* Notebook Header Bar */}
+              <div className="shrink-0 flex items-center justify-between border-b border-line bg-cream/50 px-3.5 sm:px-4 py-2">
+                <div className="flex items-center gap-1.5 text-[11px] sm:text-[11.5px] text-ink font-medium">
+                  <span className="h-2 w-2 rounded-full bg-clay" />
+                  <span>Personal Journal</span>
+                  <span className="text-line">/</span>
+                  <span className="text-ink-faint truncate max-w-[105px]">
+                    {sample.date.split('·')[1]?.trim() || sample.date}
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5">
+                  <span className="text-[9.5px] font-mono text-ink-faint">{sample.time}</span>
+                  <span className="rounded-pill bg-paper border border-line px-1.5 py-0.5 text-[9px] font-semibold text-clay">
+                    PAGE 142
+                  </span>
                 </div>
               </div>
-            </div>
 
-            {/* Notebook Bottom Status Footer */}
-            <div className="flex items-center justify-between border-t border-line bg-ivory px-6 py-3 text-[12px]">
-              <span className="flex items-center gap-1.5 text-ink-soft">
-                <svg viewBox="0 0 20 20" className="h-4 w-4 text-clay" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clipRule="evenodd" />
-                </svg>
-                <span>Encrypted & Private</span>
-              </span>
-              <span className="text-clay font-medium">
-                {isComplete ? '✓ Stored in Keepsake Vault' : 'Streaming voice to paper...'}
-              </span>
-            </div>
+              {/* Notebook Lined Paper Body */}
+              <div className="lined-paper p-4 sm:p-5 flex-1 relative flex flex-col justify-between">
+                {/* Red Margin Hairline */}
+                <div className="absolute left-6 sm:left-7 top-0 bottom-0 w-px bg-clay/20 pointer-events-none" />
+
+                <div className="pl-3.5 sm:pl-4">
+                  <h3 className="font-serif text-[18px] sm:text-[19px] font-medium text-ink tracking-tight mb-1.5">
+                    {sample.tabLabel}
+                  </h3>
+
+                  <p className="font-serif text-[13.5px] sm:text-[14px] text-ink leading-[26px] whitespace-pre-line">
+                    {currentText}
+                    {!isComplete && isPlaying && (
+                      <span className="inline-block w-1.5 h-4 ml-1 bg-clay align-middle cursor-caret" />
+                    )}
+                  </p>
+
+                  {/* Attached Photo preview once words progress past 40% */}
+                  {charCount > totalChars * 0.4 && (
+                    <div className="mt-4 flex items-start gap-2.5 transition-all duration-700 animate-fadeIn">
+                      <div className="relative overflow-hidden rounded-lg border-2 border-paper shadow-card max-w-[105px] sm:max-w-[115px] shrink-0 rotate-[-2deg]">
+                        <img
+                          src={asset(sample.image)}
+                          alt={sample.tabLabel}
+                          className="aspect-[4/3] w-full object-cover"
+                          width={280}
+                          height={210}
+                        />
+                      </div>
+                      <div className="pt-0.5">
+                        <span className="text-[9.5px] font-semibold tracking-wider uppercase text-clay block">
+                          Photo Attached
+                        </span>
+                        <span className="text-[10px] text-ink-faint block mt-0.5">{sample.location}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Tags row */}
+                  <div className="mt-4 flex flex-wrap gap-1 pt-1">
+                    {sample.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-pill border border-line bg-paper/90 px-2 py-0.5 text-[9.5px] font-medium text-ink-soft shadow-soft"
+                      >
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              {/* Notebook Bottom Status Footer */}
+              <div className="shrink-0 flex items-center justify-between border-t border-line bg-ivory/80 px-3.5 sm:px-4 py-2 text-[10.5px]">
+                <span className="flex items-center gap-1 text-ink-soft">
+                  <svg viewBox="0 0 20 20" className="h-3 w-3 text-clay" fill="currentColor" aria-hidden="true">
+                    <path fillRule="evenodd" d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clipRule="evenodd" />
+                  </svg>
+                  <span>Encrypted</span>
+                </span>
+                <span className="text-clay font-medium text-[10px]">
+                  {isComplete ? '✓ Stored in Vault' : 'Streaming voice...'}
+                </span>
+              </div>
+            </IPhoneMockup>
           </div>
         </div>
       </Container>

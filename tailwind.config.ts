@@ -25,8 +25,8 @@ const config: Config = {
         serif: ['var(--font-serif)', 'Newsreader', 'Georgia', 'serif'],
       },
       maxWidth: {
-        content: '1120px',
-        prose: '62ch',
+        content: '1240px',
+        prose: '65ch',
       },
       borderRadius: {
         card: '18px',

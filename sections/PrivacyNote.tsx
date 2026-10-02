@@ -5,7 +5,7 @@ export function PrivacyNote() {
   return (
     <section aria-label="Privacy" className="section-b bg-ivory">
       <Container>
-        <div className="mx-auto max-w-3xl rounded-card border border-line bg-paper/90 p-8 sm:p-10 shadow-soft">
+        <div className="mx-auto max-w-4xl lg:max-w-5xl rounded-card border border-line bg-paper/90 p-8 sm:p-10 shadow-soft">
           <div className="flex flex-col items-center gap-6 text-center sm:flex-row sm:items-center sm:gap-8 sm:text-left">
             <span className="wash flex h-20 w-20 shrink-0 items-center justify-center rounded-full border border-line sm:h-24 sm:w-24">
               <span className="flex h-12 w-12 items-center justify-center rounded-full bg-clay text-ivory shadow-card sm:h-14 sm:w-14">

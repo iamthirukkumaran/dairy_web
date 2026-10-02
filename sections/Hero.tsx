@@ -10,24 +10,24 @@ export function Hero() {
       className="section-tight-b relative overflow-hidden bg-ivory pt-10 sm:pt-14 lg:pt-16"
     >
       <Container>
-        <div className="grid gap-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:gap-10 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-16">
-          <div className="max-w-xl md:self-center md:py-4 lg:py-8">
+        <div className="grid gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-16 items-center">
+          <div className="w-full md:self-center md:py-4 lg:py-8">
             <div className="inline-flex items-center gap-2 rounded-full border border-clay/20 bg-cream/80 px-3.5 py-1 text-[11px] font-semibold tracking-wide2 uppercase text-clay backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-sage" />
               Private Voice Journaling · Zero AI
             </div>
 
-            <h1 className="display display-broken mt-5 text-[clamp(2.4rem,6.8vw,3.6rem)] text-ink sm:mt-6">
+            <h1 className="display display-broken mt-5 text-[clamp(2.4rem,4.8vw,3.6rem)] text-ink sm:mt-6">
               Your life,
               <br />
               <span className="italic font-normal text-clay">beautifully</span> remembered.
             </h1>
 
-            <p className="mt-5 max-w-md text-[16px] leading-[1.7] text-ink-soft sm:mt-6 sm:text-[17.5px]">
+            <p className="mt-5 max-w-xl text-[16px] leading-[1.75] text-ink-soft sm:mt-6 sm:text-[18px]">
               Speak your thoughts or write quietly. Aura archives your daily reflections, keeps the people and places that shaped you, and binds your year into an heirloom linen book.
             </p>
 
-            <div id="get" className="mt-8 max-w-md scroll-mt-28 sm:mt-9">
+            <div id="get" className="mt-8 scroll-mt-28 sm:mt-9">
               <StoreBadges />
             </div>
 
@@ -54,7 +54,7 @@ export function Hero() {
           </div>
 
           {/* Hero photograph with floating tactile memory card */}
-          <div className="relative min-h-[320px] overflow-hidden rounded-panel shadow-lift sm:min-h-[420px] md:min-h-[500px] lg:bleed-right lg:min-h-[580px] lg:rounded-r-none">
+          <div className="relative min-h-[340px] overflow-hidden rounded-panel border border-line/70 shadow-lift sm:min-h-[440px] md:min-h-[500px] lg:min-h-[580px]">
             <picture>
               <source
                 media="(min-width: 768px) and (max-width: 1023px)"

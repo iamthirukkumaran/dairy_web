@@ -14,7 +14,7 @@ export function TheBook() {
               <br />
               <span className="italic font-normal text-clay">timeless printed book.</span>
             </h2>
-            <p className="mt-5 max-w-md text-[16px] leading-[1.75] text-ink-soft">
+            <p className="mt-5 max-w-xl text-[16px] leading-[1.75] text-ink-soft">
               Typeset from your own entries, voice transcripts, and photographs. Preview and edit page by page in the app before anything is bound. Nothing prints without your review.
             </p>
 
@@ -43,7 +43,7 @@ export function TheBook() {
           </div>
 
           <div className="relative md:flex md:justify-center">
-            <div className="relative w-full max-w-[460px] overflow-hidden rounded-panel shadow-lift border border-line">
+            <div className="relative w-full max-w-[500px] overflow-hidden rounded-panel shadow-lift border border-line">
               <img
                 src={asset('/images/book.jpg')}
                 alt="Hands turning the pages of a printed photo book"

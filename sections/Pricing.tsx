@@ -19,7 +19,7 @@ export function Pricing() {
           </p>
         </div>
 
-        <ul className="mx-auto mt-10 grid max-w-3xl gap-6 sm:mt-12 sm:grid-cols-2">
+        <ul className="mx-auto mt-10 grid max-w-4xl lg:max-w-5xl gap-6 sm:mt-12 sm:grid-cols-2">
           {plans.map((plan) => (
             <li
               key={plan.id}
